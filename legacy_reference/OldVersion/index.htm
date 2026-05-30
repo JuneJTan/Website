@@ -1,0 +1,2090 @@
+<!DOCTYPE html>
+<html>
+
+<style>
+    .tooltip {
+        position: relative;
+        display: inline-block;
+        border-bottom: 1px dotted black;
+    }
+
+    .tooltip .tooltiptext {
+        visibility: hidden;
+        width: 120px;
+        background-color: #555;
+        color: #fff;
+        text-align: center;
+        border-radius: 6px;
+        padding: 5px 0;
+        position: absolute;
+        z-index: 1;
+        bottom: 125%;
+        left: 50%;
+        margin-left: -60px;
+        opacity: 0;
+        transition: opacity 0.3s;
+    }
+
+    .tooltip .tooltiptext::after {
+        content: "";
+        position: absolute;
+        top: 100%;
+        left: 50%;
+        margin-left: -5px;
+        border-width: 5px;
+        border-style: solid;
+        border-color: #555 transparent transparent transparent;
+    }
+
+    .tooltip:hover .tooltiptext {
+        visibility: visible;
+        opacity: 1;
+    }
+
+    .fixed-bar {
+        display: flex; /* 使用flex布局 */
+        top: 0; /* 将元素顶部对齐 */
+        width: 100%; /* 设置元素宽度为100% */
+        height: 80px;
+        background-color: #fff; /* 设置元素背景颜色 */
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3); /* 添加阴影效果 */
+        z-index: 999; /* 将元素置于页面顶层 */
+        justify-content: space-between; /* 将Logo和文本分别放置在固定栏的两端 */
+        align-items: center; /* 垂直居中对齐 */
+    }
+
+    .logo-link {
+        display: inline-block; /* 将链接转换为块级元素，以便设置宽度和高度 */
+        width: 100px; /* 设置Logo宽度 */
+        /*height: 50px; /* 设置Logo高度 */
+        margin-right: 50px;
+    }
+
+    .logo-link img {
+        float: left;
+        display: block; /* 将图像转换为块级元素，以便设置宽度和高度 */
+        width: 150%; /* 设置图像宽度为100% */
+        height: 100%; /* 设置图像高度为100% */
+    }
+
+    .logo-link:nth-child(2) img{
+        height: 70px;
+        width: auto;
+    }
+
+    .logos {
+        display: flex;
+        align-items: center;
+    }
+
+    .fixed-bar-text {
+        margin: 0 20px 0 0;
+    }
+
+</style>
+
+<style>
+    #text1, #showAll1 {
+        display: inline-block;
+        vertical-align: middle;
+    }
+
+    #text2, #showAll2 {
+        display: inline-block;
+        vertical-align: middle;
+    }
+
+    #text3, #showAll3 {
+        display: inline-block;
+        vertical-align: middle;
+    }
+
+</style>
+
+
+<head>
+    <link rel="stylesheet" type="text/css"/>
+    <meta charset="UTF-8">
+
+    <meta content="width=device-width, initial-scale=1" name="viewport"/>
+    <meta content="text/html; charset=windows-1252" http-equiv="Content-Type">
+    <meta content="en-us" http-equiv="Content-Language">
+    
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <title>Welcome to em+ Lab &#31243;&#24198;&#27801;&#35838;&#39064;&#32452;</title>
+</head>
+
+
+<body>
+
+<table style="height: 800px;">
+
+    <div class="fixed-bar">
+        <div class="fixed-bar">
+            <div class = "logos">
+                <a href="http://sustech.edu.cn" class="logo-link"><img src="sustech_logo.png" alt="Logo"></a>
+                <a href="http://eee.sustech.edu.cn" class="logo-link"><img src="eeelogo.png" alt="Logo2" ></a>    
+            </div>
+            <p class="fixed-bar-text"><a href="index_cn.htm">中文</a>></p>
+        </div>
+    </div>
+
+    <tr>
+        <td style="width: 81%; height: 200px;">
+            
+            <table><tr>
+                <td><img alt="em+ lab" height="145" src="empluslogo.jpg" width="auto"></td>
+            </tr></table>
+
+            <p><img alt=" &#31243;&#24198;&#27801; Qingsha's name in Chinese" height="61" src="ChengQingSha_Chinese.png"
+                    width="170"></p>
+
+            <p class="auto-style4">email: <a href="mailto:chengqs@sustech.edu.cn">chengqs@sustech.edu.cn</a></p>
+            <p class="auto-style4">
+                <img alt="" height="16" src="orcid_16x16.gif" width="16"><a
+                    href="https://orcid.org/0000-0003-3869-3378">https://orcid.org/0000-0003-3869-3378</a></p>
+        
+        </td>
+        <td style="width: 81%; height: 235px;">
+
+	  <span>
+	  <img alt="Dr. Qingsha S. Cheng  &#31243;&#24198;&#27801;&#21338;&#22763;" class="auto-style2" height="200"
+           src="Qingsha_Cheng_small.jpg" width="199"></span></td>
+        <td>
+
+            <img alt="" height="183" src="join.jpg" width="275"><br>
+
+            <a href="jobs_EN.html">Available Positions</a> <br><a href="Jobs_CH.html">
+            &#25307;&#25910;&#30805;&#22763;\&#21338;&#22763;&#30740;&#31350;&#29983;\&#21338;&#22763;&#21518;\&#24037;&#31243;&#24072;&#21551;&#31034;</a>
+        </td>
+    </tr>
+
+    <tr>
+        <td colspan="3"><strong>Qingsha (Shasha) Cheng</strong> was born in Chongqing, China. He received his B.Eng.
+            degree and M.Eng. in automation from
+            Chongqing University, Chongqing, China.
+            He received his Ph.D. degree at McMaster University, Hamilton,
+            Ontario, Canada, in 2004. Currently he is an associate professor at
+            <a href="http://www.sustech.edu.cn">Southern University of Science and Technology (SUSTech),
+                Shenzhen, China</a>.&nbsp;
+            <p>In 1998, he joined the Department of Computer Science and
+                Technology, Peking University, Beijing, China. In 1999, he
+                joined the Simulation Optimization Systems Research Laboratory, Department
+                of Electrical and Computer Engineering, McMaster University. He became a postdoctoral fellow in 2004. In
+                2007, he
+                became a research associate academic and later a research engineer in
+                the <a href="http://www.sos.mcmaster.ca">Simulation Optimization Systems Research Laboratory (SOS)</a>,
+                <a href="http://www.ece.mcmaster.ca">Department of
+                    Electrical and Computer Engineering</a>, <a href="http://www.mcmaster.ca">McMaster University</a>.
+                He also consulted for <a href="http://bandler.com/">Bandler Corporation</a>.
+                Dr. Cheng was a sessional lecturer with Faculty of Engineering at McMaster
+                University from 2007 to 2010. In 2014, he joined
+                <a href="http://www.sustech.edu.cn">SUSTech</a> as an assistant professor
+                and later a tenured associate professor. He
+                was appointed Adjunct Professor with <a href="https://www.uregina.ca/">
+                    University of Regina</a>, Canada in 2018. In 2019, he was appointed
+                as an associate editor of
+                <a href="https://onlinelibrary.wiley.com/page/journal/10991204/homepage/editorialboard.html">International
+                    Journal of Numerical Modelling: Electronic Networks, Devices and Fields.</a></p>
+            <p>He was a co-organizer and chair of the <a href="http://eomc.ru.is/smsmeo2012/">Third International
+                Workshop on Surrogate Modeling and Space Mapping for Engineering
+                Optimization (SMSMEO 2012)</a>.
+                In 2014, he is a co-organizer and chair of an IEEE International
+                Microwave Symposium (IMS) workshop on Recent Advances in Space Mapping
+                Modeling and Optimization. In 2015, he co-organized and chaired an IMS workshop on EM-Based Tuning
+                Techniques, Computer-Aided Tuning and Tuning Space Mapping.
+                In 2016, he was a session co-chair of IEEE NEMO and an organizer/session
+                chair of IEEE ICCS (OC member). In 2017, he was a session co-organizer and co-chair of
+                IEEE ACES. In 2018, he was a co-organizer and co-chair of IEEE ICCEM and
+                <a href="NEMO_2018_program.pdf">IEEE NEMO</a>(TPC member). In 2019, he served
+                as TPC member of IEEE NEMO conference. In 2020, he was a co-organizer and co-chair of IEEE NEMO special
+                session.
+                In 2021, he was TPC member, session co-organizer and co-chair of IEEE
+                ACES-China.In 2022 and 2023 he was invited as a Senior 
+			Professonal for IEEE MTT-S Young Professionals Workshop on 
+			Electromagnetic Modeling and Optimization.</p>
+            <p><span>Dr. Cheng was one of the original contributors of
+	  <a href="http://ieeexplore.ieee.org/abstract/document/1262727/">Space
+	  Mapping algorithm</a>. He has <script type="text/javascript">var theDate = new Date();
+                document.write(theDate.getFullYear() - 1999);</script> years of research experience in space mapping,</span>
+                simulator-based tuning, surrogate modeling, computer-aided design,
+                modeling of microwave circuits and antennas, software design technology and
+                methodologies for microwave CAD. He has <span id="publications"></span> publications in
+                refereed journals, conference papers, book chapters, etc.
+                <!-- calculate publications --->
+                <script> document.addEventListener('DOMContentLoaded', function () {
+                    var journal = document.getElementById("Journal").getElementsByTagName("li").length;
+                    var conference = document.getElementById("Conference").getElementsByTagName("li").length;
+                    var book = document.getElementById("Book").getElementsByTagName("li").length;
+                    var publication = journal + conference + book;
+
+                    document.getElementById("publications").innerHTML = publication.toString();
+                }, false);</script>
+
+                His publications have been cited more than 5800 times as of 
+			April 2026
+                according to
+                <a href="https://scholar.google.com/citations?user=PS7OMA0AAAAJ&amp;hl=en">
+                    Google Scholar</a>.
+
+                He has been invited
+                to review papers in highly rated international journals such as
+                <a href="https://ieeexplore.ieee.org/xpl/RecentIssue.jsp?punumber=22">
+                    IEEE Transactions on Microwave Theory and Techniques</a>
+                and
+                <a href="https://ieeexplore.ieee.org/xpl/RecentIssue.jsp?punumber=7260">
+                    IEEE Microwave and Wireless Components Letters</a>.
+            </p>
+            <p>Dr. Cheng taught following courses: </p>
+            <ul>
+    	<li><a href="EE205/main.html">Signals and Systems (2024)</a></li>
+    	<li>Advanced Nonlinear Optimization (2021-2025)</li>
+    	<li>Antenna Theory and Techniques (2020-2026)</li>
+    	<li>Advanced Microwave Engineering (2017-2020)</li>
+    	<li>Engineering Ethics (2017-2019)</li>
+    	<li>Antenna and Wave Propagation (2017-2024)</li>
+    	<li>Nonlinear Optimization (2016-2020)</li>
+    	<li>Microwave Engineering (2015-2020)</li>
+    	<li>Communication Systems II (2015-2019)</li>
+    	<li>Computer Programming (JAVA) (2015)</li>
+    	<li>Advance Technology Lecture Series (2015-2024)</li>
+    	<li>Java Programming (2015 Fall)</li>
+    	<li>Engineering Graphics (2007-2010)</li>
+	</ul>
+           <p>People</p>
+	<ul>
+    	<!-- Postdoctoral Fellows -->
+    	<li>Hongcai Chen, Research Assistant Professor</li>
+    	<li>Rusan Kumar Barik, Postdoctoral Fellow</li>
+    	<li>Sounik Kiran Kumar Dash, Postdoctoral Fellow</li>
+    	<li>Asif Khan, Postdoctoral Fellow</li>
+
+    	<!-- Current Ph.D. Students -->
+   	    <li>Yuxin Zhang (张昱心), Ph.D. student (co-supervised with <a href="https://www.ee.cityu.edu.hk/~hangwong/">WONG Hang Steve</a>, CityU, Hong Kong)</li>
+    	<li>Takele Yonas Mirete, Ph.D. student</li>
+    	<li>Yiqian Kong (孔怡茜), Ph.D. student</li>
+    	<li>Ziyi Fang (方紫怡), Ph.D. student</li>
+        <li>Ruiqi Xu(许瑞琦), Ph.D. student</li>
+        
+
+    	<!-- Ph.D. Graduates -->
+    	<li>Xiaolin Fan (范小林), Ph.D. (co-supervised with <a href="https://www.uregina.ca/engineering/faculty-staff/faculty/laforge-paul.html">Paul Laforge</a>, University of Regina, Canada) (Graduated 2021)</li>
+    	<li>Song (Sam) Li (李嵩), Ph.D. (co-supervised with <a href="https://www.uregina.ca/engineering/faculty-staff/faculty/laforge-paul.html">Paul Laforge</a>, University of Regina, Canada) (Graduated 2021)</li>
+    	<li>Fan Jiang (江帆), Ph.D. (co-supervised with <a href="http://www.ece.ust.hk/~eermurch/">Ross Murch</a>, HKUST, Hong Kong) (Graduated 2021)</li>
+    	<li>Yang Yu (于洋), Ph.D. degree (co-supervised with <a href="http://www.birmingham.ac.uk/staff/profiles/eese/lancaster-michael.aspx">Michael Lancaster</a> and <a href="https://www.birmingham.ac.uk/staff/profiles/eese/wang-yi.aspx">Yi Wang</a>, University of Birmingham, UK and <a href="https://www.gla.ac.uk/schools/engineering/staff/boliu/">Bo Liu</a>, University of Glasgow, UK) (Graduated 2022)</li>
+    	<li>Zhen Zhang (张珍), Ph.D., SUSTech-HIT joint Ph.D. program (Graduated 2022, Guangzhou University)</li>
+    	<li>Jiahua Lv (吕家华), Ph.D. (co-supervised with <a href="https://www.bse.polyu.edu.hk/People/beydu/index.html">Yaping Du</a>, the Hong Kong Polytechnic University) (Graduated 2023)</li>
+        <li>Yu Kuang (况昱), Ph.D. student (co-supervised with <a href="https://www.eng.nus.edu.sg/ece/staff/chen-zhining/">Zhining Chen</a>, National University of Singapore)</li>
+    	<li>Tianrui Qiao (乔天瑞), Ph.D. student (co-supervised with <a href="http://www.ece.ust.hk/~eermurch/">Ross Murch</a>, HKUST, Hong Kong)</li>
+    	<li>Chuanzhen Jia (贾传朕), Ph.D. student (co-supervised with <a href="https://www.bse.polyu.edu.hk/People/beydu/index.html">Yaping Du</a>, the Hong Kong Polytechnic University)</li>
+    	
+
+    	<!-- Current Master's Students -->
+    	<li>Juntao Zhang (张峻滔), Master’s student</li>
+    	<li>Yu Deng (邓煜), Master’s student</li>
+    	<li>Junjie Tan (谭俊杰), Master’s student</li>
+    	<li>Hepeng Li (李贺鹏), Master’s student</li>
+        <li>Ziyao Nian (年子峣), Master’s student</li>
+        <li>Runci Huang (黄润慈), Master’s student</li>
+        
+
+    	<!-- Master's Graduates -->
+    	<li>Kaidi Xie (谢凯迪), Master’s degree (Graduated 2018)</li>
+    	<li>Yiran Song (宋依然), Master’s degree (Graduated 2019)</li>
+    	<li>Ying Liu (刘莹), Master’s degree (Graduated 2019)</li>
+    	<li>Siyuan Li (李思远), Master’s degree (Graduated 2020)</li>
+    	<li>Yaxi Jiao (焦亚茜), Master’s degree (Graduated 2022)</li>
+    	<li>Jiaxin Liu (刘佳新), Master’s degree (Graduated 2022)</li>
+    	<li>Haorui Guo (郭昊睿), Master’s degree (Graduated 2022)</li>
+    	<li>Hongzhen Yi (易宏臻), Master’s degree (Graduated 2024)</li>
+    	<li>Guangying Wang (王光英), Master’s degree (Graduated 2024)</li>
+    	<li>Fu Zou (邹福), Master’s degree (Graduated 2024)</li>
+	</ul>
+        </td>
+    </tr>
+
+    <tr>
+        <!-- <td colspan="3"><b><span>PUBLICATIONS</span> (update to March, 2024)</b> -->
+        <td colspan="3"><b><span>PUBLICATIONS</span> (update to <span id="updateDate">April, 2026</span>)</b>
+            <p></p>
+
+            <p id="text1"></p>
+            <button id="showAll1">show all</button>
+            <ol id="Journal" reversed>
+            <li>
+            H. Cheng, Y. Qiao, L. Zhang, Q.S. Cheng, et al., "An SFDPose 
+            network with credible evolution mechanism for digital twin systems 
+            in industrial applications," <em>Journal of Manufacturing 
+            Systems</em>, vol. 86, pp. 38-49, 2026.</li>
+            <li>
+            A. Khan, Q. Zhang, M. Zada, Z. Zhang, Y. He, and Q.S. Cheng, 
+            "Frequency selective absorber-enhanced flexible CP MIMO antenna for 
+            mmWave wearable IoT," <em>IEEE Internet of Things Journal</em>.</li>
+            <li>
+            Y. Kuang, Q.S. Cheng, and Z.N. Chen, "Chu-limit-guided 
+            decomposition-based multiobjective large-scale optimization for 
+            generative broadband electrically small antenna design," <em>IEEE 
+            Transactions on Antennas and Propagation</em>, vol. 74, no. 4, pp. 
+            3385-3396, April 2026.</li>
+            A. Khan, Q.S. Cheng, M. Zada, Z. Zhang, Y. He, and Q. Zhang, 
+            "Dual-band CP massive MIMO antenna with hybrid absorber-AMC for 
+            smart mobility systems," <em>IEEE Transactions on Antennas and 
+            Propagation</em>, vol. 74, no. 1, pp. 269-282, Jan. 2026.</li>
+            <li>
+            Y. Zhang, K.-C. Wang, Q.S. Cheng, and H. Wong, "A wideband 
+            millimeter-wave HDI-based antenna-in-package design and its 
+            GSG-probe-free measurement," <em>IEEE Transactions on Antennas and 
+            Propagation</em>, vol. 73, no. 10, pp. 7484-7496, Oct. 2025.</li>
+            <li>
+            P. Si, M. Liang, J. Zou, Y. Kuang, J. Zhang, Q.S. Cheng, Y. Kong, 
+            Y. Cai, G. Huang, Y. Wu, Z. Long, B. Zhao, and D. Zhang, 
+            "Battery-free antenna sticker for wireless sensing joint rotation," 
+            <em>Chemical Engineering Journal</em>, vol. 513, p. 162691, June 
+            2025.</li>
+            <li>
+            A. Khan, Q.S. Cheng, Y. He, M. Zada, and Q. Zhang, "A 12-port 
+            circularly polarized dual-band back-cover MIMO antenna for 5G 
+            smartphones," <em>IEEE Antennas Wireless Propagation Letters</em>, 
+            vol. 24, no. 7, pp. 1864-1868, Jul. 2025.</li>
+              <li>
+    	J. E. Rayas-Sánchez, Q. -J. Zhang, J. C. Rautio, N. K. Nikolova, V. E. Boria, <strong>Q. S. Cheng</strong>, M. Yu, and W. J. R. Hoefer, “Microwave modeling and design optimization: the legacy of John Bandler,” <em>IEEE Transactions on Microwave Theory and Techniques</em>,vol. 73, no. 1, pp. 87–101, Jan. 2025.</li>
+	<li>
+    	J. Lyu, H. C. Chen, <strong>Q. S. Cheng</strong>, Y. Zhang, and Y. Du, “Rapid design of litz wire using surrogate assisted optimization embedding adjacent trust region,”<em>IEEE Transactions on Components, Packaging and Manufacturing Technology</em>, vol. 14, no. 12, pp. 2211–2219, Dec. 2024.</li>
+	<li>
+                J.W. Zhang, Z. Zhang, J. Zhang, J.W. Wu, J.Y. Dai, Q. Cheng, 
+				Q.S. Cheng, and T.J. Cui, "A novel two-stage optimization 
+				framework for designing active metasurfaces based on multi-port 
+				microwave network theory," <em>IEEE Transactions on Antennas and 
+				Propagation</em>, vol. 72, no. 2, pp. 1603-1616, Feb. 2024.</li>
+				<li>
+                S.K.K. Dash, Q.S. Cheng, T. Khan, M.V. Yadav, and, L. Wang, "5G 
+				millimeter-wave MIMO DRAs with reduced mutual coupling," <em>Microw. 
+				Opt. Technol. Lett.</em>, vol. 66, no. 1, Jan. 2024.</li>
+				<li>
+                Y. Kuang, Q.S. Cheng, and Z.N. Chen, "Characteristic 
+				mode-guided trust-region-based optimization for mode 
+				manipulation in dual-band metantenna design," <em>IEEE Transactions 
+				on Antenna and propagation</em>, vol. 71, no. 12, pp. 9717-9727, Dec. 
+				2023.</li>
+				<li>
+                C. Jia, Z. Li, Y. Zhang, J. Cao, H. Chen, X. Zhao, Y. Du, Q.S. Cheng,
+                N. Ma, and F. Qiu, "Serial arc-fault restriction survey 
+				with standard-listed products in the Chinese market," <em>IEEE 
+				Transactions on Industry Applications</em>, vol. 59, no. 6, pp. 
+				7453-7461, Nov.-Dec. 2023.</li>
+				<li>
+                N.C. Pradhan, M.G. Reddy, K.S. Subramanian, R.K. Barik, S. 
+				Koziel, and Q.S. Cheng, "Microfluidic SIW-based tunable 
+				self-diplexing antenna for Sub-6 GHz band applications," <em>IEEE 
+				Transactions on Circuits and Systems II: Express Briefs</em>, vol. 
+				70, no. 4, pp. 1435-1439, Apr. 2023.</li>
+				<li>
+                Z. Zhang, B. Liu, Y. Yu, M. Imran, Q.S. Cheng, and M. Yu, "A 
+				surrogate modeling space definition method for efficient filter 
+				yield optimization," <em>IEEE Microwave and Wireless Technology 
+				Letters</em>, vol. 33, no. 6, pp. 631-634, June 2023.</li>
+				<li>
+                T. Qiao, F. Jiang, S. Shen, Z. Zhang, M. Li, Y. Chiu, 
+				Q.S. Cheng, and R. Murch, "Pixel antenna optimization using the 
+				adjoint method and the method of moving asymptotes," <em>IEEE 
+				Transactions on Antennas &amp; Propagation</em>, vol. 71, no. 3, pp. 
+				2873-2878, March 2023.</li>
+				<li>
+                Y. Jiao, Q. Zhu, R. Ni, and Q.S. Cheng, "A 
+				multi-surrogate-assisted optimization framework for SSPP-based 
+				mmwave array antenna," <em>IEEE Transactions on Antennas &amp; 
+				Propagation</em>, vol. 33, no. 6, pp. 631-634, June 2023.</li>
+				<li>
+                L. Xue, B. Liu, Y. Yu, Q.S. Cheng, M. Imran and T. Qiao, "An 
+				unsupervised microwave filter design optimization method based 
+				on a hybrid surrogate model-assisted evolutionary algorithm," 
+				<em>IEEE Trans. Microw. Theory Techn.</em>, 2022, vol. 71, no. 3, pp. 
+				1159-1170, March 2023.</li>
+				<li>X. Wen, Y. Yu, G. Shi, Z. Wang, Q.S. Cheng, Y. Li, A. Zhang, and C. Guo,"IEEE Transactions on
+                    Microwave Theory and Techniques, "WR-3.4 Band Waveguide and Bandpass Filters Using Copper Additive
+                    Manufacturing," <em>IEEE Transactions on Microwave Theory and Techniques</em>, vol. 71, no. 3, pp.
+                    1190-1200, March 2023.
+                </li>
+                <li>N. C. Pradhan, M. G. Reddy, K. S. Subramanian, R. K. Barik, S. Koziel, and Q.S. Cheng,
+                    "Microfluidic SIW-based tunable self-diplexing antenna for sub-6 GHz band applications," <em>
+                        IEEE Transactions on Circuits and Systems II: Express Briefs</em>,vol. 
+				70, no. 4, pp. 1435-1439, April 2023.</li>
+                <li>J. Lyu, H.C. Chen, Y. Du, and Q.S. Cheng,
+                    "LitzImp: a fast impedance extraction algorithm for litz wire coil," <em>
+                        IEEE Journal on Multiscale and Multiphysics Computational Techniques</em>,
+				<em>IEEE Trans. Industrial Electronics</em>, vol. 70, no. 9, pp. 
+				9326-9335, Sep. 2023.</li>
+                <li>Y. Yu, Z. Zhang, Q.S. Cheng, B. Liu, Y. Wang, C. Guo, and T. T. Ye,
+                    "State-of-the-art: AI-assisted surrogate modeling and optimization for microwave filters", <em>IEEE
+                        Trans. Microwave Theory Tech.</em>,
+                    vol. 70, no. 11, pp. 4635 - 4651, 2022.
+                </li>
+                <li>Y. Yu, Y. Wang, T. Skaik, T. Starke, X. Shang, M.J. Lancaster, P. Hunyor, P. Huggard, H. Wang, M.
+                    Harris, M. Beardsley, and Q.S. Cheng,
+                    "D-band waveguide diplexer fabricated using micro laser sintering,"<em>
+                        IEEE Trans. Components, Packaging and Manufacturing Technology</em>,
+                    vol. 12, no. 9, pp. 1446-1457, 2022.
+                </li>
+
+
+                <li>T. Qiao, J. Zhang, and Q.S. Cheng,"Space-mapping based automatic
+                    design of SIW-based directional coupler with arbitrary power ratio," <em>
+                        IEEE Journal on Multiscale and Multiphysics Computational Techniques</em>,
+                    vol. 7, pp. 200-206, 2022.
+                </li>
+                <li>Z. Zhang, J.W. Zhang, J.W. Wu, J.C. Liang, Z.X. Wang, Q. Cheng,
+                    Q.S. Cheng, T.J. Cui, H.Q. Yang, G.B. Liu, and S.R. Wang, "Macromodeling
+                    of reconfigurable intelligent surface based on microwave network
+                    theory," <em>IEEE Trans. Antenna and Prop.</em>, vol. 70, no. 10, pp. 8707-8717, Oct. 2022.
+                </li>
+                <li>Z. Zhang, H. Chen, F. Jiang, Y. Yu, and Q.S. Cheng, "K-means
+                    based multi-group differential evolution optimization framework for
+                    design of MIMO antenna with decoupling elements,"
+                    <em>IEEE Ant. and Wirel. Prop. Letters</em>, 2022.
+                </li>
+                <li>F. Jiang, Z. Zhang, M. Li, S. Shen, C.-Y. Chiu, Y. Zhang, Q.S. Cheng, and R. Murch, "Multi-port
+                    pixel antenna optimization using
+                    characteristic mode analysis and sequential feeding port search," <em>IEEE Trans. Antenna and
+                        Prop.</em>,vol. 70, no. 10, pp. 9160-9174, Oct. 2022.
+                </li>
+                <li>Y. Yu, B. Liu, Y. Wang, and Q.S. Cheng, "Automated diplexer
+                    design with key performance indicator-based objectives,"
+                    <em>IEEE Microw. and Wirel. Compon. Letters</em>, vol. 32, no.
+                    7, pp. 827-830, July 2022
+                </li>
+                <li>Z. Zhang, B Liu, Y. Yu, and Q.S. Cheng, "A microwave filter
+                    yield optimization method based on offline surrogate model assisted
+                    evolutionary algorithm,"<em>IEEE Trans. Microwave Theory Tech.</em>,
+                    vol. 70, no. 6, pp. 2925-2934, June 2022.
+                </li>
+                <li>R. K. Barik, S. Koziel, Q.S. Cheng, and S. Szczepanski, "Highly
+                    miniaturized self-diplexed U-shaped slot antenna based on shielded
+                    QMSIW,"<em> IEEE Access</em>, vol. 9, pp. 158926-158935, 2021.
+                </li>
+                <li>Y. Yu, Y. Wang, C. , Q.S. Cheng, and M. Yu, "Resonant manifold multiplexers,"
+                    <em>IEEE Trans. Microwave Theory Tech.</em>, vol. 70, no. 2, pp.
+                    1059-1071, Feb. 2022.
+                </li>
+                <li>S.K.K. Dash, Q.S. Cheng, R.K. Barik, F. Jiang, N.C. Pradhan, and S.S. Karthikeyan, "A compact SIW
+                    cavity-backed self-multiplexing antenna for hexa-band operation,"
+                    <em>IEEE Trans. Antenna and Prop.</em>, vol. 70, no. 3,
+                    pp. 2283-2288, Mar. 2022.
+                </li>
+                <li>N.C. Pradhan, K.S. Subramanian, R.K. Barik, and Q.S. Cheng, "A shielded QMSIW based self-diplexing
+                    antenna for closely-spaced bands and high-isolation,"
+                    <em>IEEE Ant. and Wirel. Prop. Letters</em>, &nbsp;vol. 20, no. 12, pp.
+                    2382-2386, Dec. 2021.
+                </li>
+                <li>J. Lyu, H.C. Chen, Y. Zhang, Y. Du, and Q.S. Cheng, "Litz wire and uninsulated twisted wire
+                    assessment using a multilevel PEEC method,"
+                    <em>IEEE Trans. Power Electronics</em>. vol. 37, no. 2, pp.
+                    2372-2381, Feb. 2022.
+                </li>
+                <li>F. Jiang, S. Shen, C. Chiu, Z. Zhang, Y. Zhang, Q.S. Cheng, and R. Murch,
+                    "Pixel antenna optimization base on perturbation sensitivity analysis," <em>IEEE Trans. Antenna and
+                        Prop.</em>,
+                    vol. 70, no. 1, pp. 472-486, Jan. 2022.
+                </li>
+                <li> Y. Zhang, H.C. Chen, Y. Du, M. Chen, J. Liang, J. Li, X.
+                    Fan, L. Sun, Q.S. Cheng, and X. Yao, "Early warning of incipient
+                    faults for power transformer based on DGA using a two-stage feature
+                    extraction technique," <em>IEEE Trans. Power Delivery</em>, vol. 37,
+                    no. 3, Jun. 2022.
+                </li>
+                <li>F. Jiang, Z. Zhang, Q.S. Cheng, S. Shen, C.-Y. Chiu, and R. Murch, "An efficient optimization scheme
+                    for MIMO antenna decoupling networks using space mapping techniques"
+                    <em>IEEE Journal on Multiscale and Multiphysics Computational Techniques</em>, vol. 6, pp. 56-61,
+                    May 2021.
+                </li>
+                <li>Z. Zhang, F. Jiang, Y. Jiao, and Q.S. Cheng, "Low-cost surrogate modeling of antennas using
+                    two-level Gaussian process regression method,"
+                    <em>International Journal of Numerical Modelling: Electronic Networks, Devices and Fields</em>&#65292;vol
+                    34&#65292; no.5, pp. 1-16, Apr. 2021.
+                </li>
+
+                <li>Z. Zhang, H. Chen, F. Jiang, Y. Yu, and Q.S. Cheng, "A
+                    benchmark test suite for antenna S-parameter optimization," <em>IEEE Trans. Antenna and Prop.</em>,
+                    vol. 69, no. 10, pp. 6635-6650, Oct. 2021.
+                </li>
+                <li>N.C. Pradhan, S.S. Karthikeyan, R.K. Barik, and Q.S. Cheng,
+                    "Design of compact substrate integrated waveguide based triple- and quad-band power dividers,"
+                    <em>IEEE Microw. and Wirel. Compon. Letters</em>, vol. 31, no.
+                    4, pp. 365-368, Apr. 2021.
+                </li>
+                <li>Z. Zhang, H. Chen, F. Jiang, Y. Yu, and Q.S. Cheng,
+                    "Efficient yield-constrained design using polynomial chaos
+                    surrogate for microwave filters," <em>IEEE Access</em>. vol. 9, pp. 22408-22416, 2021.
+                </li>
+                <li>Z. Zhang, F. Jiang, H. Chen, and Q.S. Cheng,
+                    "Three-phase adaptive differential evolution for antenna array
+                    synthesis," <em>International Journal of Numerical Modelling:
+                        Electronic Networks, Devices and Fields</em>. (Accepted).
+                </li>
+                <li>R.K. Barik, Q.S. Cheng, N.C. Pradhan, and K.S.
+                    Subramanian, "A miniaturized quad-band branch-line crossover for
+                    GSM/WiFi/5G/WLAN applications,"<em> AEU Int. J. Electronics and
+                        Communications</em>, vol. 134, pp. 1-6, May 2021.
+                </li>
+                <li>S.K.K. Dash, Q.S. Cheng, R.K. Barik, T. Khan, and K.S.
+                    Subramanian, "A compact dual-fed highly isolated SIW based self-diplexing
+                    antenna," <em>AEU Int. J. Electronics and Communications</em>,
+                    vol. 132, pp. 1-6, Apr. 2021.
+                </li>
+                <li>T. Duraiswamy, R. K. Barik, Q.S. Cheng, S. Kamatchi,
+                    and K. S. Subramanian, "Compact dual-band SIW filters loaded
+                    with double ring D-shaped resonators for sub-6 GHz
+                    applications," <em>Journal of Electromagnetic Waves and
+                        Applications</em>, vol. 35, no. 7, pp. 923-936, Jan. 2021.
+                </li>
+                <li>N. C. Pradhan, S. S. Karthikeyan, R. K. Barik, Q. S. Cheng,
+                    "A novel compact diplexer employing substrate integrated
+                    waveguide loaded by triangular slots for C-band application,"
+                    <em>Journal of Electromagnetic Waves and Applications</em>, vol.
+                    36, no. 6, pp. 830-842, Oct. 2021.
+                </li>
+                <li>S.K.K. Dash, Q.S. Cheng, and T. Khan, "A Superstrate loaded
+                    aperture coupled dual-band circularly polarized dielectric
+                    resonator antenna for X-Band communications," <em>International
+                        Journal of Microwave and Wireless Technologies</em>, pp. 1-8, Nov. 2020.
+                </li>
+                <li>P. Si, F. Jiang, Q.S. Cheng, G. Rivers,&nbsp; H. Xie,
+                    &nbsp;A.K.K. Kyaw, and&nbsp;B. Zhao, "Triple non-covalent dynamic
+                    interactions enabled tough and rapid room temperature
+                    self-healing elastomer for next generation soft antenna,"
+                    <em>Journal of Materials Chemistry A</em> no. 47, pp. 25073-25084, Sep. 2020.
+                </li>
+                <li>Z. Zhang, H. Chen, and Q.S. Cheng,
+                    "Surrogate-assisted quasi-Newton enhanced global optimization of
+                    antennas based on a heuristic hypersphere sampling,"<em>IEEE Trans. Antenna and Prop.</em>,
+                    vol. 69, no. 5, pp. 2993-2998, May 2021.
+                </li>
+                <li> M. Ali, K.K. Sharma, R.P. Yadav, A. Kumar, F. Jiang, Q.S. Cheng, and G.-L. Huang, "Design of dual
+                    mode wideband SIW slot
+                    antenna for 5G applications&quot;
+                    <em>Int. J. RF and Microwave CAE</em>, vol. 30, no. 12, pp. 1-10, Sep. 2020.
+                </li>
+                <li> R.K. Barik, Q.S. Cheng, N.C. Pradhan, and K.S.
+                    Subramanian, "Design of miniaturized SIW filter loaded with
+                    open-loop resonators and its application to diplexer,"
+                    <em>Radioengineering</em>, vol. 29, no. 4, pp. 609-616, Dec. 2020.
+                </li>
+                <li> T. Duraiswamy, S. Kamatchi, K.S. Subramanian, R.K. Barik,
+                    and Q.S. Cheng, "Miniaturized SIW&nbsp; filter using D-shaped
+                    resonators with wide out -of -band rejection for 5G
+                    applications," <em>Journal of Electromagnetic Waves and
+                        Applications</em>, vol. 34, no. 18, pp. 2397-2409, Sep. 2020.
+                </li>
+                <li> R. K. Barik, Q.S. Cheng, S.K.K. Dash, N.C. Pradhan, and
+                    S.S. Karthikeyan, "Design of a compact orthogonal fed self-diplexing
+                    bowtie-ring slot antenna based on SIW,"
+                    <em>Int. J. RF and Microwave CAE</em>, vol. 30, no. 11, pp. 1-9, Nov. 2020.
+                </li>
+                <li> S.K.K. Dash, Q.S. Cheng, and R.K. Barik, "A compact SIW backed self-quadruplexing antenna for
+                    C-band communication,"
+                    <em>Int. J. RF and Microwave CAE</em>, vol. 30, no. 10, pp. 1-9, July 2020.
+                </li>
+                <li> Z. Zhang, Q.S. Cheng, H. Chen, and F. Jiang, "An efficient
+                    hybrid sampling method for neural networks based microwave
+                    component modeling and optimization," <em>IEEE Microw. and Wirel. Compon. Letters</em>, vol. 30, no.
+                    7, pp. 625-628, July 2020.
+                </li>
+                <li> J. Lv, H. Chen, Y. Zhang, Y. Du, and Q.S. Cheng, "Fast simulation of litz wire using multilevel
+                    PEEC method,"
+                    <em>IEEE Trans. Power Electronics</em>, vol. 35, no. 12, pp. 12612-12616, Dec. 2020.
+                </li>
+                <li> L. Xia L, B. Wu, H. Xie, J. Chen, and Q.S. Cheng, "An inline pseudoelliptic self-packaging
+                    substrate integrated suspended line filter with mixed electric and magnetic coupling,"
+                    <em>Int. J. RF and Microwave CAE</em>, vol. 30, no. 9, pp. 1-11, Sep. 2020.
+                </li>
+                <li>
+                    H. Chen, et al., "Comprehensive transient analysis for low-voltage 
+                    system in a wind turbine under direct lightning," <em>International 
+                    Journal of Electrical Power &amp; Energy Systems</em>, vol. 121, p. 
+                    106131, 2020.</li>
+                <li>R.K. Barik, Q.S. Cheng, S.K.K. Dash, N.C. Pradhan, and S.S. Karthikeyan, "Compact high-isolation
+                    self-diplexing antenna based on SIW for C-band applications",
+                    <em>Journal of Electromagnetic Waves and Applications</em>, vol. 34, no.7, pp. 960-974, May 2020.
+                </li>
+                <li>S.K.K. Dash, Q.S. Cheng, T. Khan, "An off-center-fed compact wideband microstrip antenna with
+                    truncated corners and parasitic patches for circular polarization,"
+                    <em>Int. J. RF and Microwave CAE</em>, vol. 30, no. 8, pp. 1-10,
+                    Aug. 2020.
+                </li>
+                <li>S.K.K. Dash, Q.S. Cheng, R.K. Barik, N.C. Pradhan, and S.S.
+                    Karthikeyan, "A compact triple-fed high-isolation SIW Based
+                    self-triplexing antenna," <em>IEEE Ant. and Wirel. Prop. Letters</em>,
+                    vol. 19, no. 5, pp. 766-770, May 2020.
+                </li>
+                <li>S. Li, X. Fan, P.D. Laforge, and Q.S. Cheng, "Surrogate
+                    model-based space mapping in post-fabrication bandpass filters
+                    tuning," <em>IEEE Trans. Microwave Theory Tech.</em>, vol. 68, no. 6, pp. 2172-2182, June 2020.
+                </li>
+                <li>R.K. Barik, Q.S. Cheng, N.C. Pradhan, and S.S. Karthikeyan,
+                    "Highly miniaturized wideband 3-dB branch-line hybrid with
+                    second harmonic-suppression," <em>Microw. Opt. Techn. Lett.</em>, vol. 62, no. 6, pp. 2248-2256,
+                    June 2020.
+                </li>
+                <li>R.K. Barik, Q.S. Cheng, N.C. Pradhan and S.S.
+                    Karthikeyan, "A compact SIW power divider for dual-band
+                    applications," <em>Radioengineering</em>, vol. 29, no. 1, pp. 94-100, Apr. 2020.
+                </li>
+                <li>F. Jiang, C.-Y. Chiu, S. Shen, Q.S. Cheng and R.D. Murch, "Pixel
+                    antenna optimization using N-port characteristic mode analysis,"
+                    <em>IEEE Trans. Antenna and Prop.</em>, vol. 68, no. 5, pp.
+                    3336-3347, May 2020.
+                </li>
+                <li>Y. Yu, B. Liu, Y. Wang, M.J. Lancaster and Q.S. Cheng, "A
+                    general coupling matrix synthesis method for all-resonator
+                    diplexers and multiplexers," <em>IEEE Trans. Microwave Theory Tech.</em>, vol. 68, no. 3, pp.
+                    987-999, Mar. 2020.
+                </li>
+                <li>C. Guo, J. Li, Y. Yu, F. Zhang, Y. Zhu, Q. Yang, W. Zhu, X.
+                    Shang, Y. Wang, G. Huang, T. Yuan, Q.S. Cheng, and A. Zhang, "A
+                    3-D printed E-plane waveguide magic-T using air-filled
+                    coax-to-waveguide transitions," <em>IEEE Trans. Microwave Theory Tech.</em>,
+                    vol. 67, no. 12, pp. 4984-4994, Dec. 2019.
+                </li>
+                <li><a href="https://www.mdpi.com/1424-8220/19/14/3065/pdf">Y. Liu, Q.S. Cheng, and S. Koziel, "A
+                    generalized SDP multi-objective
+                    optimization method for EM-based microwave device design,"
+                    <em>Sensors</em>,
+                    vol. 19, no. 14, July 2019.</a></li>
+                <li><a href="https://www.mdpi.com/1424-8220/19/13/3023/pdf">Y.
+                    Song, Q.S. Cheng, and S. Koziel, "Multi-fidelity local surrogate
+                    model for computationally efficient microwave component design optimization,"
+                    <em>Sensors</em>,
+                    vol. 19,
+                    no. 13, July 2019.</a></li>
+                <li><a href="https://www.mdpi.com/2079-9292/8/6/662/pdf">L. WY
+                    Liu, A. Kandwal, Q.S. Cheng, H. Shi, I. Tobore, and Z. Nie, "Non-invasive
+                    blood glucose monitoring using a curved Goubau line," <em>Electronics</em>, vol. 8, no. 6, June
+                    2019.</a></li>
+                <li>
+                    H. Chen, Y. Zhang, Y. Du, and Q.S. Cheng, "Fast design of
+                    multilayered shields using surrogate model and space mapping,"
+                    <em>IEEE Trans. Electromagn. Compat.</em>, 2019.
+                </li>
+                <li>
+                    H. Zu, B. Wu, Y.-T. Zhao, Q.S. Cheng and W.-B. Lu, "Dual-frequency-scanning broadband antenna
+                    based on Z-shape spoof surface plasmon polaritons," <em>Applied Physics Express</em>, vol. 12, no.
+                    8, July
+                    2019.
+
+                </li>
+                <li>L. Xia, B. Wu, L. Song, J. Chen, and Q.S. Cheng, "Design of pseudoelliptic filters with controllable
+                    transmission zeros using high-Q double-layer suspended stripline resonators,"
+                    <em>Int. J. RF and Microwave CAE</em>, 2019.
+
+                </li>
+                <li>A. Bekasiewicz, S. Koziel, and Q.S. Cheng, "Analysis of
+                    circular polarization antenna design trade-offs using low-cost
+                    EM-driven multi-objective optimization,"<em>Int. J. RF and Microwave CAE</em>, 2019.
+                </li>
+                <li>C. Fan, B. Wu, Q.-M. Huang, J.-Z. Chen, and Q.S. Cheng, "Double-layer microstrip ultra-wideband
+                    filtering power divider with high selectivity and large isolation,"
+                    <em>Int. J. RF and Microwave CAE</em>, 2019.
+                </li>
+                <li>H. Chen, Y. Zhang, Y. Du, and Q.S. Cheng, "Lightning propagation analysis on telecommunication
+                    towers above the perfect ground using full-wave time domain PEEC method,"
+                    <em>IEEE Trans. Electromagn. Compat.</em>, pp.
+                    1-8,
+                    Feb. 2019.
+                </li>
+                <li>B. Wu , H.-R. Zu, B.-Y. Xue, Y.-T. Zhao, and Q.S. Cheng,
+                    "Flexible wideband power divider with high isolation
+                    incorporating spoof surface plasmon polaritons transition with
+                    graphene flake," <em>Applied Physics Express</em>
+                    , vol. 12, no.
+                    2, Feb. 2019.
+                </li>
+                <li><a href="https://ieeexplore.ieee.org/document/8548540">L. WY Liu, A. Kandwal, H. Shi, and Q.S.
+                    Cheng, "Wireless
+                    power transfer using an RF plasma," <em>IEEE Access</em>, vol. 6, 2018.</a></li>
+                <li><a href="https://ieeexplore.ieee.org/document/8502815">L. Xia, B. Wu, J.Z. Chen, T. Su, and Q.S.
+                    Cheng, "A high-Q
+                    miniaturized suspended stripline resonator for pseudoelliptic
+                    filter design," <em>IEEE Access</em>
+                    , vol. 6, 2018.</a></li>
+                <li><a href="https://ieeexplore.ieee.org/document/8490809">H. Chen, Y. Zhang, Y. Du, and Q.S. Cheng,
+                    "Lightning
+                    transient analysis of telecommunication system with a tubular
+                    tower," <em>IEEE Access</em>
+                    , vol. 6, 2018.</a></li>
+                <li>C.-Y. Chiu, S. Shen, F. Jiang, K. Ishimiya, Q.S. Cheng, and R.D. Murch, "Reconfigurable metal
+                    chassis antenna," <em>IEICE Trans. Commun.</em>,
+                    vol. 102, no. 1, Jan. 2019.
+
+                </li>
+                <li>M.A. Ul Haq, S. Koziel, and Q.S. Cheng, "Miniaturization of
+                    wideband antennas by means of feed line topology alterations,"
+                    <em>IET Microwaves, Antennas &amp; Propagation</em>, vol. 12,
+                    no. 13, pp. 2128-2134, Oct. 2018.
+                </li>
+                <li>S. Koziel, Q.S. Cheng, and S. Li, "Optimization-driven
+                    antenna design framework with multiple performance constraints,"<em>Int. J. RF and Microwave
+                        CAE</em>, vol. 28, no. 4, pp. 1-11,
+
+                    May 2018.
+                </li>
+                <li>S. Koziel, A. Bekasiewicz, and Q.S. Cheng, "Response
+                    features for low-cost statistical analysis and tolerance-aware
+                    design of antennas,"vol. 21, no. 3, <em>Int. J. Numerical Modelling</em>,
+                    pp. 1-10, May/June 2018.
+                </li>
+                <li>A. Bekasiewicz, S. Koziel, and Q.S. Cheng, "Reduced-cost
+                    constrained miniaturization of wideband antennas using improved
+                    trust-region gradient search with repair step," <em>IEEE Ant. and Wirel. Prop. Letters</em>, vol.
+                    17, no. 4, pp. 559-562, Apr. 2018.
+                </li>
+                <li>S. Koziel, A. Bekasiewicz, and Q.S. Cheng, "Conceptual
+                    design and automated optimization of a novel compact UWB MIMO
+                    slot antenna,"<em>IET Microwaves, Antennas &amp; Propagation</em>,
+                    vol. 11, no. 8, pp. 1162-1168, May 2017.
+                </li>
+                <li>
+                    <a href="http://digital-library.theiet.org/content/journals/10.1049/iet-map.2015.0246">S. Koziel,
+                        Q.S. Cheng, and J.W. Bandler, "Feature-based
+                        surrogates for low-cost microwave modeling and optimization,"
+                        <em>IET Microwaves, Antennas &amp; Propagation</em>, vol. 9, no.
+                        15, pp. 1706-1712, Sep. 2015.
+                    </a>
+                </li>
+                <li> S. Koziel, S. Ogurtsov, Q.S. Cheng, and J.W. Bandler,
+                    "Rapid EM-based microwave design optimization exploiting
+                    shape-preserving response prediction and adjoint sensitivities,"
+                    <em>IET Microwaves, Antennas &amp; Propagation</em>, vol. 8, no. 10, 775-781, Apr. 2014.
+                </li>
+                <li>S. Koziel, Q.S. Cheng, and J.W. Bandler, "Fast EM modeling
+                    exploiting shape-preserving response prediction and space
+                    mapping,"
+                    <em>IEEE Trans. Microwave Theory
+                        Tech.</em> , vol. 62, no. 3, pp.
+                    399-407, Mar. 2014.
+                </li>
+                <li>S. Koziel, S. Ogurtsov, J.W. Bandler, and Q.S. Cheng,
+                    "Reliable space-mapping optimization integrated with EM-based
+                    adjoint sensitivities," <em>IEEE Trans. Microwave Theory Tech.</em>,
+                    vol. 61, no.&nbsp;10, pp. 3493-3502, Oct. 2013.
+                </li>
+                <li>
+                    S. Tu, Q.S. Cheng, Y. Zhang, J.W. Bandler, and N.K. Nikolova,
+                    "Space mapping optimization of handset antennas exploiting
+                    thin-wire models," <em>IEEE Trans. Antenna and Prop.</em>, vol.
+                    61, no. 1, pp. 3797-3807, July 2013.
+                </li>
+                <li>
+                    S. Koziel, J.W. Bandler, and Q.S. Cheng, "Reduced-cost microwave
+                    component modeling using space-mapping-enhanced EM-based kriging
+                    surrogates," <em>International Journal of Numerical Modelling: Electronic Networks, Devices and
+                    Fields</em>, vol. 26, no. 3,
+                    pp. 275-286, May/June 2013.
+                </li>
+                <li>
+                    Q.S. Cheng, J.W. Bandler, and S. Koziel, "Tuning space mapping:
+                    the state of the art," <em>Int. J. RF and Microwave CAE</em>, vol. 22, no. 6, pp. 639-651,
+                    Nov. 2012.
+                </li>
+                <li>
+                    S. Koziel, Q.S. Cheng, and J.W. Bandler, "Comparative study of
+                    space-mapping-based techniques for microwave design
+                    optimization," <em>IET Microwaves, Antennas &amp; Propagation</em>,
+                    vol. 6, no. 3, pp. 361-370, Mar. 2012.
+                </li>
+                <li>
+                    S. Koziel, J.W. Bandler, and Q.S. Cheng, "Constrained parameter
+                    extraction for microwave design optimisation using implicit
+                    space mapping," <em>IET Microwaves, Antennas &amp; Propagation</em>,
+                    vol. 5, no. 10, pp. 1156-1163, July 2011.
+                </li>
+                <li>
+                    S. Koziel, J.W. Bandler, and Q.S. Cheng, "Tuning space mapping
+                    design framework exploiting reduced EM models," <em>IET
+                    Microwaves, Antennas &amp; Propagation</em>, vol. 5, no. 10, pp.
+                    1219-1226, July 2011.
+                </li>
+                <li>
+                    A. Khalatpour, R.K. Amineh, Q.S. Cheng, M.H. Bakr, N.K.
+                    Nikolova, and J.W. Bandler, "Accelerating space mapping
+                    optimization with adjoint sensitivities," <em>IEEE
+                    Microwave Wirel. Compon. Lett.</em>, vol. 21, no.6, pp. 280-282,
+                    June 2011.
+                </li>
+                <li>
+                    S. Koziel, Q.S. Cheng, and J.W. Bandler, "Rapid design
+                    optimization of microwave structures through automated tuning
+                    space mapping,"<em> IET Microwaves, Antennas &amp; Propagation</em>,
+                    vol. 4, no. 11, pp. 1892-1902, Nov. 2010.
+                </li>
+                <li>Q.S. Cheng, J.W. Bandler, S. Koziel, M.H. Bakr, and
+                    S. Ogurtsov, "The state of the art of microwave CAD: EM-based
+                    optimization and modeling,"
+                    <em>Int. J. RF and Microwave CAE</em>, vol. 20,
+                    no.5, pp. 475-491, Sep. 2010.
+                </li>
+                <li>S. Koziel, J.W. Bandler, and Q.S. Cheng, "Robust
+                    trust-region space-mapping algorithms for microwave design
+                    optimization," <em>IEEE Trans. Microwave Theory and Tech.</em>,
+                    vol.58, no.8, pp. 2166-2174, Aug. 2010.
+                </li>
+                <li>Q.S. Cheng, J.C. Rautio, J.W. Bandler, and S. Koziel,
+                    "Progress in simulator-based tuning"the art of tuning space
+                    mapping," <em>IEEE Microwave Magazine</em>, vol. 11, no. 4, pp.
+                    96-110, May 2010.
+                </li>
+                <li>S. Koziel, Q.S. Cheng and J.W. Bandler, "Implicit
+                    space mapping with adaptive selection of preassigned
+                    parameters,"
+                    <em>IET Microwaves, Antennas &amp; Propagation</em>, vol. 4, no. 3,
+                    p.361-373, Mar. 2010.
+                </li>
+                <li>Q.S. Cheng, J.W. Bandler, and S. Koziel, "Space
+                    mapping design framework exploiting tuning elements,"
+                    <em>IEEE Trans. Microwave Theory and Tech.</em>, vol. 57, no. 1, pp.
+                    136-144, Jan. 2010.
+                </li>
+                <li>S. Koziel, J. Meng, J.W. Bandler, M.H. Bakr, and Q.S. Cheng, "Accelerated microwave design
+                    optimization with tuning
+                    space mapping,"
+                    <em>IEEE Trans. Microwave Theory Tech.</em>, vol. 57, no. 2, pp.
+                    383-394, Feb. 2009.
+                </li>
+                <li>S. Koziel, Q.S. Cheng, and J.W. Bandler, "Space mapping,"
+                    <em>IEEE Microwave Magazine</em>, vol. 9, no. 6,&nbsp; pp. 105-122, Dec.
+                    2008.
+                </li>
+                <li>Q.S. Cheng, J.W. Bandler, and J.E. Rayas-S"nchez,
+                    "Tuning-aided implicit space mapping," <em>Int. J. RF and Microwave CAE</em>, vol. 18, no. 5, pp.
+                    445-453, Sep.
+                    2008.
+                </li>
+                <li>Q.S. Cheng, J.W. Bandler, and S. Koziel, "Combining
+                    coarse and fine models for optimal design," <em>IEEE Microwave
+                        Magazine</em>, vol. 9, no. 1, pp. 79-88, Feb. 2008.
+                </li>
+                <li>Q.S. Cheng, S. Koziel, and J.W. Bandler, "Simplified
+                    space mapping approach to enhancement of microwave device models,"
+                    <em>Int. J. RF and Microwave CAE</em>, vol.
+                    16, no. 5, pp. 518-535, Sep. 2006.
+                </li>
+                <li>J.W. Bandler, Q.S. Cheng, D.M. Hailu, and N.K. Nikolova,
+                    "A space-mapping design framework," <em>IEEE Trans. Microwave Theory Tech.</em>, vol. 52, 2004, pp.
+                    2601-2610.
+                </li>
+                <li>J.W. Bandler, Q.S. Cheng, N.K. Nikolova, and M.A. Ismail, "Implicit space
+                    mapping optimization exploiting preassigned parameters," <em>IEEE
+                        Trans. Microwave Theory Tech.</em>, vol. 52, no. 11, pp. 378-385,
+                    Nov. 2004.
+                </li>
+                <li>J.W. Bandler, Q.S. Cheng, S.A. Dakroury, A.S. Mohamed,
+                    M.H. Bakr, K. Madsen, and J. S"ndergaard, "Space mapping: the state
+                    of the art," <em>IEEE Trans. Microwave Theory Tech.</em>, vol. 52,
+                    no. 1, pp. 337-361, Jan. 2004.
+                </li>
+            </ol>
+
+
+
+            <p id="text4">Book Chapters</p>
+            <ol id="Book" reversed>
+                <li>Q.S. Cheng and Y. Kuang, "Surrogate Model Design," Electromagnetic Information Theory White Paper,Huawei 
+				2012 Lab, 2023.</li>
+				<li>Q.S. Cheng and Z. Zhang, "Sampling methods for surrogate modeling and optimization,"
+                    in Surrogate Modeling for High-Frequency Design, S. Koziel, and A. Pietrenko-Dabrowska (Eds.),
+                    World Scientific, March 2022.
+                </li>
+                <li>S. Koziel, S. Ogurtsov, Q.S. Cheng, and J.W. Bandler, "Space
+                    mapping," in Simulation-Driven Design Optimization and Modeling for
+                    Microwave Engineering, S. Koziel, X.S. Yang, and Q.J. Zhang (Eds.),
+                    Imperial College Press, 2013, pp. 81-105.
+                </li>
+                <li>Q.S. Cheng, J.W. Bandler, and S. Koziel, "Tuning space
+                    mapping," in Simulation-Driven Design Optimization and Modeling for
+                    Microwave Engineering, S. Koziel, X.S. Yang, and Q.J. Zhang (Eds.),
+                    Imperial College Press, 2013, pp. 107-128.
+                </li>
+
+
+            </ol>
+
+
+            <p id="text2"></p>
+            <button id="showAll2">show all</button>
+            <ol id="Conference" reversed>
+        <li>
+            H. Li and Q.S. Cheng, "Research on multi-scale arc fault edge 
+            detection for low-voltage systems based on lightweight network," 
+            in Proc. 6th Int. Symp. Plasma Energy Convers. (iSPEC 2025), Hong 
+            Kong, Oct. 2025.</li>
+            <li>
+            J. Tan and Q.S. Cheng, "An unsupervised approach for low voltage ac 
+            series arc fault detection based on harmonic elimination and 
+            autoencoder," in Proc. 6th Int. Symp. Plasma Energy Convers. 
+            (iSPEC 2025), Hong Kong, Oct. 2025.</li>
+            <li>
+            A. Pietrenko-Dabrowska, S. Koziel, Z. Fang, and Q.S. Cheng, 
+            "Multi-fidelity simplex-based global design optimization of 
+            microwave components," IEEE MTT-S Int. Conf. Numer. Electromagn. 
+            Multiphys. Model. Optim. (NEMO), Tianjin, China, Jul. 2025.</li>
+            <li>
+            T. Qiao, S. Shen, Z. Han, C.-Y. Chiu, Q.S. Cheng, and R. Murch, 
+            "A wideband compact 20-port antenna design developed using 
+            electromagnetic information theory for MIMO-OFDM systems," 2025 
+            IEEE International Symposium on Antennas and Propagation and North 
+            American Radio Science Meeting, Ottawa, Canada, Jul. 13-16, 2025.</li>
+            <li>
+            S.K. Kumar Dash, T. Khan, and Q.S. Cheng, "A compact 
+            self-multiplexing antenna for quadband applications," 2024 54th 
+            European Microwave Conference (EuMC), Paris, France, 2024, pp. 
+            752-755.</li>
+    	<li>吴钊铭，贾传朕，叶枫舒，谭俊杰，黄照贺，<strong>程庆沙</strong>，“基于半监督学习的电弧故障检测模型，”第十九届电工技术学会年会，2024年9月20-22日，西安。</li>
+    	<li>吴艺，李枭，谭俊杰，宾秋军，<strong>程庆沙</strong>，“基于粒子群算法的串联电弧故障小波分解方案及小波特征选择方法，”第十九届电工技术学会年会，2024年9月20-22日，西安。</li>
+    	<li>H. Yi, <strong>Q. S. Cheng</strong>, and Q. Pan, “Automated surrogate modeling and optimization for 4th-order transformer-based resonator,” 2024 IEEE International Workshop on Radio Frequency and Antenna Technologies (iWRF&AT), Shenzhen, China, 2024, pp. 84-87.</li>
+   	<li>Z. Tian, J. Zhang, Y. Kuang, and <strong>Q. S. Cheng</strong>, “A FSS inverse design method based on output space mapping enhanced ECM,” 2024 International Applied Computational Electromagnetics Society Symposium on 16-19, August 2024 in Xi'an, China.</li>
+    	<li>T. Qiao, Z. Han, S. Shen, C. Chiu, <strong>Q. S. Cheng</strong>, and R. Murch, “Performance bounds on the partial gain to Q-factor quotient for loaded N-port antenna systems,” 2024 IEEE International Symposium on Antennas and Propagation and ITNC-USNC-URSI Radio Science Meeting on 14-19 July 2024 in Florence, Italy.</li>
+    	<li>Y. Kuang, <strong>Q. S. Cheng</strong> and Z. N. Chen, “Characteristics mode-guided trust-region-based optimization for dual-band metantenna design,” 2023 IEEE 11th Asia-Pacific Conference on Antennas and Propagation (APCAP), Guangzhou, China, 2023, pp. 1-2. (Best student paper)</li>
+                <li>
+                    Z. Huang, C. Jia, Z. Li, Y. Du, Q.S. Cheng, H. Du, and X. 
+					Li, "Detection performance of arcing fault detectors in the 
+					Chinese market according to the Chinese Standard GB/T 
+					31143," Journal of Physics: Conference Series, vol. 2703, 
+					no. 1, pp.1-7, 012097, 2024.
+                </li>
+				<li>
+                    N. Ma, C. Jia, Y. Du, Q.S. Cheng, Z. Li, Z. Wu, and L. Pei, 
+					"Arc-fault unwanted tripping survey of hair dryers with 
+					GB31143-Listed Products," (ACCES 2023) (Accepted)</li>
+				<li>
+                    Z. Huang, C. Jia, Z. Li, Y. Du, Q.S. Cheng, H. Du, and X. 
+					Li, "Detection performance of arcing fault detectors in the 
+					Chinese market according to the Chinese Standard GB/T 
+					31143", 2023 5th International Conference on Energy, Power 
+					and Grid (ICEPG 2023) (Guangzhou, China, 2023).
+                </li>
+				<li>
+                    T. Qiao, S. Tang, J. Rao, Y. Zhang, C.-Y. Chiu, Q.S. Cheng, 
+					and R. Murch, "A novel optimization technique for designing 
+					frequency reconfigurable pixelated planar antenna," 2023 
+					IEEE International Symposium on Antennas and Propagation and 
+					USNC-URSI Radio Science Meeting (USNC-URSI) (Portland, OR, 
+					USA, 2023), pp. 1757-1758.</li>
+				<li>
+                    J. Lyu, H. C. Chen, Y. Du, Y. Zhang, and Q.S. Cheng, "Design 
+					of a box-shape coil structure to achieve uniform magnetic 
+					field distribution for WPT," 2023 IEEE International 
+					Conference on Power Science and Technology (ICPST) (Kunming, 
+					China, 2023), pp. 450-453.</li>
+				<li>
+                    G. Wang, Z. Zhang, and Q.S. Cheng, "Port tuning and tuning 
+					space mapping," 2023 IEEE MTT-S International Conference on 
+					Numerical Electromagnetic and Multiphysics Modeling and 
+					Optimization (NEMO) (Winnipeg, MB, Canada, 2023), pp. 62-65.</li>
+				<li>
+                    G. Wang, Q. Zhu, R. Ni, and Q.S. Cheng, "SSPP-based mmWave 
+					array antenna design based on MSAO framework," 2023 
+					International Applied Computational Electromagnetics Society 
+					(ACES) Symposium.</li>
+				<li>
+                    S. Koziel, A. Pietrenko-Dabrowska, and Q.S. Cheng, "Yield-driven antenna design using principal
+                    directions" 2022 IEEE Conference on Antenna Measurements and Applications (CAMA). (Guangzhou, China,
+                    Nov. 2022).
+                </li>
+                <li>
+                    Y. Yu, Z. Zhang, Q.S. Cheng, B. Liu, and Y. Wang, "Surrogate-based design and tuning methods for
+                    RF/microwave devices", IEEE MTT-S Int. Microwave Symp. (Denver, CO, June 2022). (accepted)
+                </li>
+                <li>
+                    Z. Zhang, Y. Yu, Q.S. Cheng, Y. Yang, and F. Shen, "An efficient yield-constrained design framework
+                    using global surrogates for microwave filters," 2022 International Conference on Microwave and
+                    Millimeter Wave Technology (ICMMT2022) (Harbin, China, July 2022).
+                </li>
+                <li>
+                    A. Pietrenko-Dabrowska, S. Koziel, and Q.S. Cheng, "Reliable design closure of high-frequency
+                    components by adaptive design specifications," 2022 International Conference on Microwave and
+                    Millimeter Wave Technology (ICMMT2022) (Harbin, China, July 2022).
+                </li>
+                <li>
+                    Y. Kuang, Z.N. Chen, and Q.S. Cheng, "Feedless mode tracking optimization of metasurface antenna
+                    using characteristic mode analysis," IEEE International Symposium on Antennas and Propagation and
+                    USNC-URSI Radio Science Meeting (APS/URSI 2021), (Singapore, Dec. 2021).
+                </li>
+                <li>
+                    R. K. Barik, Q.S. Cheng, and S. Koziel, "Quad-band impedance transformer for extremely high load
+                    impedance matching with out-of-band spurious response suppression," IEEE MTT-S International
+                    Wireless Symposium (IEEE IWS 2021), (Nanjing, China, May 2021). (FLASH competition Finalist)
+                </li>
+                <li>
+                    R. K. Barik, Q.S. Cheng, and S. Koziel, "Design and experimental validation of highly compact
+                    branch-line balun for quad-band applications," IEEE MTT-S International Wireless Symposium (IEEE IWS
+                    2021), (Nanjing, China, May 2021).
+                </li>
+                <li>
+                    Z. Zhang, Y. Yu, F. Jiang, and Q.S. Cheng. "Gaussian process regression modeling based on landmark
+                    isometric feature mapping for antennas," EUCAP 2021.
+                </li>
+                <li>
+                    J.A. Tomasson, S. Koziel, A. Pietrenko-Dabrowska, and Q.S. Cheng, "Low-cost antenna optimization by
+                    means of gradient search and principal components," The 2021 International Applied Computational
+                    Electromagnetics Society Symposium in China (ACES-China 2021)
+                </li>
+                <li>
+                    Z. Zhang and Q.S. Cheng, "A local enhanced sampling strategy for surrogate-based microwave component
+                    optimization," The 2021 International Applied Computational Electromagnetics Society Symposium in
+                    China (ACES-China 2021). (Invited)
+                </li>
+                <li>
+                    Y. Jiao, Z. Zhang, Y. Yu, and Q.S. Cheng, "Feature-based surrogate-assisted Harris hawks
+                    optimization algorithm for microwave filters," The 2021 International Applied Computational
+                    Electromagnetics Society Symposium in China (ACES-China 2021). (Student Paper Finalist Award)
+                </li>
+
+
+                <li>
+                    Y. Kuang, Z.N. Chen, and Q.S. Cheng, "Feedless mode tracking
+                    optimization of metasurface antenna using characteristic mode
+                    analysis," IEEE International Symposium on Antennas and Propagation
+                    and USNC-URSI Radio Science Meeting (APS/URSI 2021), (Singapore,
+                    Dec. 2021).
+                </li>
+                <li>
+                    R. K. Barik, Q.S. Cheng, and S. Koziel, "Quad-band impedance
+                    transformer for extremely high load impedance matching with
+                    out-of-band spurious response suppression," IEEE MTT-S International
+                    Wireless Symposium (IEEE IWS 2021), (Nanjing, China, May 2021). (One
+                    of the Finalists of the FLASH competition)
+                </li>
+                <li>
+                    R. K. Barik, Q.S. Cheng, and S. Koziel, "Design and experimental
+                    validation of highly compact branch-line balun for quad-band
+                    applications," IEEE MTT-S International Wireless Symposium (IEEE IWS
+                    2021), (Nanjing, China, May 2021).
+                </li>
+                <li>
+                    &nbsp;Z. Zhang, Y. Yu, F. Jiang, and Q.S. Cheng. "Gaussian
+                    process regression modeling based on landmark isometric feature
+                    mapping for antennas," EUCAP 2021. (Accepted)
+                </li>
+                <li>
+                    Z. Zhang and Q.S. Cheng, "A local enhanced sampling
+                    strategy for surrogate-based microwave component optimization," The
+                    2020 International Applied Computational Electromagnetics Society
+                    Symposium in China (ACES-China 2020). (Accepted and Postponed to
+                    July 2021)
+                </li>
+                <li>
+                    Y. Kuang, S. Li, X. Fan, and Q.S. Cheng, "SMT: A
+                    space-mapping-based tuning software system for a post-fabrication
+                    bandpass filter," International Applied Computational
+                    Electromagnetics Society Symp. (ACES-China), (Chengdu, China, Aug.
+                    2020). (Accepted and Postponed to July 2021)
+                </li>
+                <li>
+                    S.K.K. Dash, Q.S. Cheng, R. K. Barik, N. C. Pradhan, and
+                    S.S. Karthikeyan, "A compact substrate integrated self-diplexing
+                    antenna for WiFi and ISM band applications," 50th European Microwave
+                    Conference, (Utrecht, Netherlands, Sep. 2020). (Accepted and
+                    Postponed to 2021)
+                </li>
+                <li>
+                    S.K.K. Dash, Q.S. Cheng, and T. Khan, "A spiral-fed
+                    equilateral triangular dielectric resonator antenna for circular
+                    polarization,"&nbsp; 33rd URSI General Assembly and Scientific
+                    Symposium (URSI GASS 2020), (Rome, Italy, Aug-Sept 2020, Accepted
+                    and Postponed to 2021).
+                </li>
+                <li>
+                    Y. Yu, Q.S. Cheng, and R. K. Barik, "Project-based learning
+                    method in teaching antenna and wave propagation course," IEEE TALE
+                    Conference, online, (Japan, Dec. 2020). (accepted)
+                </li>
+                <li>
+                    Z. Zhang, H. Chen, and Q.S. Cheng, "Surrogate-assisted
+                    enhanced global optimization based on hybrid DE for antenna design,"
+                    IEEE MTT-S International Conference on Numerical Electromagnetic and
+                    Multiphysics Modeling and Optimization (NEMO) (Hangzhou, China, Dec.
+                    2020).
+                </li>
+                <li>
+                    S. Koziel, A. Pietrenko-Dabrowska, and Q.S. Cheng, "Antenna
+                    modeling by nested kriging with automated domain thickness
+                    determination," IEEE MTT-S International Conference on Numerical
+                    Electromagnetic and Multiphysics Modeling and Optimization (NEMO)
+                    (Hangzhou, China, Dec. 2020).
+                </li>
+                <li>
+                    S. Koziel, A. Pietrenko-Dabrowska, Q.S. Cheng, and Z. Zhang,
+                    "Low-cost surrogate modeling of compact microstrip circuits in
+                    highly-dimensional parameters spaces using variable-fidelity nested
+                    co-kriging," IEEE MTT-S International Conference on Numerical
+                    Electromagnetic and Multiphysics Modeling and Optimization (NEMO)
+                    (Hangzhou, China, Dec. 2020).
+                </li>
+                <li>
+                    A. Pietrenko-Dabrowska, S. Koziel, Q.S. Cheng, and Z. Zhang, "Metamodels
+                    and iterative design correction for rapid optimization of compact
+                    microwave components," IEEE MTT-S International Conference on
+                    Numerical Electromagnetic and Multiphysics Modeling and Optimization
+                    (NEMO) (Hangzhou, China, Dec. 2020).
+                </li>
+                <li> X. Fan, S. Li, P.D. Laforge, and Q.S. Cheng, "Automated spiral
+                    inductor design by a calibrated PI network with manifold mapping
+                    technique," <em>IEEE MTT-S Int. Microwave Symp. </em>(Los Angeles,
+                    CA, June 2020)&#12290;
+                </li>
+                <li> S. Li, Q.S. Cheng, and J. Zhang, "Deep multi-path low-light
+                    image enhancement," <em>IEEE International Conference on Multimedia
+                        Information Processing and Retrieval (MIPR)</em>, invited, (Shenzhen,
+                    Guangdong, China,Apr.2020).
+                </li>
+                <li> N.C. Pradhan, K.S. Subramanian, R.K. Barik, and Q.S. Cheng,
+                    "Design of a compact SIW diplexer with square cavities for C-band
+                    applications," <em>URSI Regional Conference on Radio Science (URSI-RCRS
+                        2020)</em>,&nbsp;(IIT (BHU), Varanasi, India, Feb. 2020).
+                </li>
+                <li> Y. Liu and Q.S. Cheng, "Microwave engineering course for engineering education accreditation:
+                    exploration and practice in SUSTech,"
+                    <em>IEEE TALE Conference</em>, (Yogyakarta, Indonesia, Dec. 2019).
+                </li>
+                <li>T. Duraiswamy, R.K. Barik, Q.S. Cheng, S. Kamatchi,&nbsp;and K.S.
+                    Subramanian, "A compact wideband SIW power divider with CSRR and
+                    slots for Ku and K band applications<em>,"</em>&nbsp;<em>International
+                        Microwave &amp; RF Conference (IMaRC-2019)</em>,&nbsp;(IIT Bombay, Mumbai, India,
+                    Dec. 2019).
+                </li>
+                <li>R.K. Barik, Q.S. Cheng, and K.S. Subramanian, "An automatic
+                    design approach for microstrip line impedance transformer for
+                    triple-band application<em>,"
+                        Asia-Pacific Microwave Conf. (APMC)</em>(Singapore, Dec. 2019).
+                </li>
+                <li>X. Fan, S. Li, P.D. Laforge, and Q.S. Cheng, "A Post-fabrication
+                    Tuning Method using Space Mapping and Surrogate Modeling Techniques<em>,"
+                        European Microwave Conf.
+                        (Paris, France, Oct. 2019).</em>
+                </li>
+                <li>Y. Yu, J. Li, C. Guo, G.-L. Huang, Q.S. Cheng, and A. Zhang, "A
+                    connectorized X-band 3-D printed air-filled selfsuspended
+                    rectangular coaxial transmission line<em>," European Microwave Conf.</em>
+                    (Paris, France, Oct. 2019).
+                </li>
+                <li>A.O. Fadamiro, O.J. Famoriji, R.S. Zakariyya, F. Lin&#65292;F. Jiang, Q.S. Cheng, A. Somefun,
+                    and E.O. Ogunti, "Aggressive space mapping technique for reconfigurable
+                    hexagonal
+                    patch antenna design," <em>IEEE AP-S/URSI Int. Symp. on Antennas and
+                        Propag.</em> (Atlanta, GA, July 2019).
+                </li>
+                <li>X. Fan, S. Li, P.D. Laforge, and Q.S. Cheng, "EM-based design
+                    approach for multiband filters by reflected group delay method and
+                    cascade space mapping,"
+                    <em>IEEE MTT-S Int. Microwave Symp.</em>(Boston, MA, June 2019).<em> </em></li>
+                <li>X. Fan, S. Li, P.D. Laforge, and Q.S. Cheng, "A dualband
+                    coupling matrix method for designing quad-channel diplexer,"<em>
+                        IEEE MTT-S International Conference on Numerical Electromagnetic and
+                        Multiphysics Modeling and Optimization (NEMO) </em>(Boston, MA,
+                    May-June 2019).
+                </li>
+                <li>L. Zhou, Y. Kuang, S. Li, X. Fan, and Q.S. Cheng, "Automatic
+                    impedance matching for three-stub waveguide tuner based on space
+                    mapping,"<em> 11th International Conference on Microwave and
+                        Millimeter Wave Technology (ICMMT2019)</em>(Guangzhou, China, May
+                    2019).
+                </li>
+                <li>Y. Kuang, L. Zhou, S. Li, X. Fan, and Q.S. Cheng, "A tuning method for
+                    triple-stub tuner using knowledge-based surrogate model," <em>11th International Conference on
+                        Microwave and Millimeter Wave Technology (ICMMT2019)</em>(Guangzhou,
+                    China, May 2019).
+                </li>
+                <li>X. Fan, S. Li, P.D. Laforge, and Q.S. Cheng, "Design of a
+                    compact quad-channel diplexer using stepped-impedance resonator," <em>IEEE
+                        International Conference on Computational Electromagnetics (ICCEM)</em>
+                    (Shanghai, China, Mar. 2019).
+                </li>
+                <li>S. Li, X. Fan, P.D. Laforge, and Q.S. Cheng, "Multistage
+                    modeling and space mapping for automated microwave filter design ," <em>IEEE
+                        International Conference on Computational Electromagnetics (ICCEM)</em>
+                    (Shanghai, China, Mar. 2019).
+                </li>
+                <li>M.A. Ul Haq, S. Koziel, and Q.S. Cheng, "A Novel Isolation
+                    Improvement Technique for Wideband MIMO Antenna Systems,"<em> European Conference on Antennas and
+                        Propagation (EuCAP)</em>
+                    (Krakow, Poland, Mar.-Apr., 2019).
+                </li>
+                <li>X. Fan, S. Li, P.D. Laforge, and Q.S. Cheng, "The sequential
+                    parameter extraction for EM-based design of dielectric-resonator
+                    bandpass filter<em>," IEEE MTT-S International
+                        Conference on Numerical Electromagnetic and
+                        Multiphysics Modeling and Optimization (NEMO) for RF, Microwave and
+                        Terahertz Applications</em> (Reykyavik, Iceland, Aug. 2018).
+                </li>
+                <li>X. Fan, S. Li, P.D. Laforge, and Q.S. Cheng, "An efficient
+                    EM-based ultra-wideband bandpass filter design<em>," IEEE MTT-S International
+                        Conference on Numerical Electromagnetic and
+                        Multiphysics Modeling and Optimization (NEMO) for RF, Microwave and
+                        Terahertz Applications</em> (Reykyavik, Iceland, Aug. 2018).
+                </li>
+                <li>U. Ullah, S. Koziel, and Q.S. Cheng, "Design of a novel compact
+                    structure of a wide-slot circularly polarized antenna,"<em>International
+                        Applied Computational Electromagnetics Society (ACES) Symposium</em>
+                    (Beijing, China, July-Aug. 2018).
+                <li>M.A. Ul Haq, S. Koziel, and Q.S. Cheng, "On feed line
+                    modifications for compact wideband antenna design,"<em>European Conference on Antennas and
+                        Propagation
+                        (EUCAP)</em> (London, UK, Apr. 2018).
+                </li>
+                <li>S. Ogurtsov, S. Koziel, Y. Yu, and Q.S. Cheng, "Design and
+                    validation of corporate feeds for low sidelobe microstrip linear
+                    arrays,"<em>European Conference on Antennas and Propagation
+                        (EUCAP)</em> (London, UK, Apr. 2018).
+                </li>
+                <li>A. Bekasiewicz, S. Koziel, and Q.S. Cheng, "Novel miniaturized
+                    circular polarization antenna with elliptical slots and feed with
+                    loaded stubs,"<em>European Conference on Antennas and Propagation
+                        (EUCAP)</em> (London, UK, Apr. 2018).
+                </li>
+                <li>S. Li, Q.S. Cheng, G.-L. Huang, X. Fan, and P.D. Laforge,
+                    "Frequency-Dependent Implicit Space-Mapping Algorithm for Wideband
+                    Microwave Prototyping," <em>IEEE International Conference on
+                        Computational Electromagnetics (ICCEM)</em> (Chengdu, China, Mar.
+                    2018).
+                </li>
+                <li>A. Bekasiewicz, S. Koziel, Q.S. Cheng, and X. Fan, "Design
+                    trade-offs of compact circular polarization antennas by means of
+                    multi-objective optimization," <em>IEEE International Conference on
+                        Computational Electromagnetics (ICCEM)</em> (Chengdu, China, Mar.
+                    2018).
+                </li>
+                <li>X. Fan, S. Li, P.D. Laforge, and Q.S. Cheng, "An EM-based
+                    cascade design procedure for&nbsp;high-order bandpass filter," <em>IEEE
+                        International Conference on Computational Electromagnetics (ICCEM)</em>
+                    (Chengdu, China, Mar. 2018).
+                </li>
+                <li>A. Bekasiewicz, S. Koziel, Q.S. Cheng, and S. Li, "Constrained
+                    low-cost size reduction of wideband antennas by means of enhanced
+                    trust-region search algorithm," <em>IEEE International Conference on
+                        Computational Electromagnetics (ICCEM)</em> (Chengdu, China, Mar.
+                    2018).
+                </li>
+                <li>M.A. Ul Haq, S. Koziel, and Q.S. Cheng, "Miniaturization
+                    of wideband antennas by means of ground plane modifications: a case
+                    study," <em>IEEE International Conference on Computational
+                        Electromagnetics (ICCEM)</em> (Chengdu, China, Mar. 2018).
+                </li>
+                <li>K. Xie, L. WY LIU, Q. Zhang, and Q.S. Cheng, "Monitoring blood
+                    glucose fluctuation using SIW cavity with a coupling slot," <em>The
+                        6th Asia-Pacific Conference on Antennas and Propagation (APCAP) </em>
+                    (Xi'an, China, Oct. 2017).
+                </li>
+                <li>S. Koziel, J.W. Jayasinghe, J. Anguera, Q.S. Cheng, and D.N.
+                    Uduwawala, "Optimization of high-directivity fan-beam antennas,"<em>International Applied
+                        Computational Electromagnetics Society Symp. (ACES-China)</em>
+                    (Suzhou, China, Aug. 2017).
+                </li>
+                <li>S. Ogurtsov, S. Koziel, and Q.S. Cheng, "Design of compact
+                    microstrip branchline couplers for broadband circularly polarized
+                    DRAs,"<em>International Applied
+                        Computational Electromagnetics Society Symp. (ACES-China)</em>
+                    (Suzhou, China, Aug. 2017).
+                </li>
+
+                <li>S. Koziel and Q.S. Cheng, "Size reduction of UWB
+                    antennas with performance constraints," <em>International Applied
+                        Computational Electromagnetics Society Symp. (ACES-China)</em>
+                    (Suzhou, China, Aug. 2017).
+                </li>
+                <li>A. Bekasiewicz, S. Koziel, Q.S. Cheng, and J.W. Bandler,
+                    "EM-driven multi-objective design of impedance transformers by
+                    Pareto ranking bisection algorithm," <em>International Applied
+                        Computational Electromagnetics Society Symp. (ACES-China)</em>
+                    (Suzhou, China, Aug. 2017).
+                </li>
+                <li>M.A. Ul Haq, S. Koziel, and Q.S. Cheng, "EM-driven size
+                    reduction of UWB antennas with ground plane modifications," <em>
+                        International Applied Computational Electromagnetics Society Symp.
+                        (ACES-China)</em> (Suzhou, China, Aug. 2017).
+                </li>
+                <li>M.A. Ul Haq, S. Koziel, and Q.S. Cheng, "A structure and design
+                    optimization of compact antenna for Internet of Things
+                    applications," <em>International Applied Computational
+                        Electromagnetics Society Symp. (ACES-China)</em> (Suzhou, China,
+                    Aug. 2017).
+                </li>
+                <li>S. Li, X. Fan, P.D. Laforge, Q.S. Cheng, and S. Koziel,
+                    "Automated EM-level design framework for sequential coupled
+                    resonator filter," <em>International Applied Computational
+                        Electromagnetics Society Symp. (ACES-China)</em> (Suzhou, China,
+                    Aug. 2017).
+                </li>
+                <li>F. Jiang, S. Li, Y. Yu, Q.S. Cheng, and S. Koziel, "Sensitivity
+                    optimization of antenna for non-invasive blood glucose monitoring,"
+                    <em>International Applied Computational Electromagnetics Society
+                        Symp. (ACES-China)</em> (Suzhou, China, Aug. 2017).
+                </li>
+                <li>X. Fan&#65292;S. Li, P.D. Laforge, and Q.S. Cheng, "A sequentially
+                    coupled filter design approach using the reflected group delay
+                    method and the implicit space mapping technique,"
+                    <em>IEEE MTT-S Int. Microwave Symp.</em>(Honolulu, HI, June 2017).<em> </em></li>
+                <li>S. Li, X. Fan, P.D. Laforge, and Q.S. Cheng, "Space mapping
+                    post-fabrication tuning of 3D printed air-filled waveguide filter,"
+                    <em>IEEE MTT-S Int. Microwave Symp.</em>(Honolulu, HI, June 2017).<em> </em></li>
+                <li>S. Koziel, A. Bekasiewicz, Q.S. Cheng, and Q. Zhang, "Multi-objective design of miniaturized
+                    impedance transformers by domain segmentation," <em>IEEE MTT-S International
+                        Conference on Numerical Electromagnetic and
+                        Multiphysics Modeling and Optimization (NEMO) for RF, Microwave and
+                        Terahertz Applications</em> (Sevilla, Spain, May 2017).
+                </li>
+                <li>P. Kurgan, S. Koziel, and Q.S. Cheng, "Multi-objective EM-based design
+                    optimization of compact branch-line coupler," <em>IEEE MTT-S International
+                        Conference on Numerical Electromagnetic and
+                        Multiphysics Modeling and Optimization (NEMO) for RF, Microwave and
+                        Terahertz Applications</em> (Sevilla, Spain, May 2017).
+                </li>
+                <li>P. Kurgan, S. Koziel, and Q.S. Cheng, "EM-driven design of recurrent slow-Wave
+                    structures,"<em> IEEE MTT-S International Conference on Numerical Electromagnetic and
+                        Multiphysics Modeling and Optimization (NEMO) for RF, Microwave and
+                        Terahertz Applications</em> (Sevilla, Spain, May 2017).
+                </li>
+                <li>S. Koziel, A. Bekasiewicz, Q.S. Cheng, and Q. Zhang, "Pareto ranking
+                    bisection algorithm for rapid multi-objective design of antenna structures,"
+                    <em>IEEE MTT-S International Conference on Numerical Electromagnetic and
+                        Multiphysics Modeling and Optimization (NEMO) for RF, Microwave and
+                        Terahertz Applications </em>(Sevilla, Spain, May 2017).
+                </li>
+                <li>S. Koziel, A. Bekasiewicz, and Q.S. Cheng, "On ultra-wideband
+                    antenna miniaturization involving efficiency and matching
+                    constraints," <em>European Conference on Antennas and Propagation
+                        (EUCAP)</em> (Paris, France, Mar. 2017).
+                </li>
+                <li>S. Koziel, A. Bekasiewicz, Q.S. Cheng,and S. Li, "Accelerated
+                    multi-objective design optimization of antennas by surrogate
+                    modeling and domain segmentation," <em>European Conference on
+                        Antennas and Propagation (EUCAP)</em> (Paris, France, Mar. 2017).
+                </li>
+                <li>S. Koziel, A. Bekasiewicz, and Q.S. Cheng,
+                    "Multi-objective optimization of compact UWB impedance matching
+                    transformers using Pareto front exploration and adjoint
+                    sensitivities,"<em> The 15th IEEE International Conference on
+                        Communication Systems (IEEE ICCS)</em>, (Shenzhen, China, Dec.,
+                    2016).
+                </li>
+                <li>S. Koziel, A. Bekasiewicz, and Q.S. Cheng, "Fast re-design of
+                    antenna structures with respect to substrate permittivity and
+                    thickness," <em>IEEE Loughborough Antennas and Propagation
+                        Conference (LAPC)</em>, (Loughborough, UK, Nov., 2016).
+                </li>
+                <li>A. Bekasiewicz, S. Koziel, and Q.S. Cheng, "Reflection response
+                    control of bandwidth-enhanced antennas through constrained
+                    optimization," <em>IEEE Loughborough Antennas and Propagation
+                        Conference (LAPC)</em>, (Loughborough, UK, Nov., 2016).
+                </li>
+                <li>S. Koziel and Q.S. Cheng, "Reduced-cost data-driven modeling of
+                    antenna structures,"
+                    <em>IEEE MTT-S International Conference on Numerical Electromagnetic and
+                        Multiphysics Modeling and Optimization (NEMO) for RF, Microwave
+                        and Terahertz Applications </em>(Beijing, China, July
+                    2016).
+                </li>
+                <li>S. Koziel, A. Bekasiewicz, Q.S. Cheng, and Q. Zhang, "Expedited
+                    EM-driven design optimization of&nbsp;compact dual-band microwave
+                    couplers using&nbsp;adaptive response Scaling,"
+                    <em>IEEE MTT-S International Conference on Numerical Electromagnetic and
+                        Multiphysics Modeling and Optimization (NEMO) for RF, Microwave
+                        and Terahertz Applications </em>(Beijing, China, July
+                    2016).
+                </li>
+                <li>S. Koziel, A. Bekasiewicz, and Q.S. Cheng, "Expedited
+                    two-objective dimension scaling of compact microwave passives using
+                    surrogate models,"
+                    <em>IEEE MTT-S International Conference on Numerical Electromagnetic and
+                        Multiphysics Modeling and Optimization (NEMO) for RF, Microwave
+                        and Terahertz Applications </em>(Beijing, China, July
+                    2016).&nbsp;&nbsp;
+                </li>
+                <li>A. Bekasiewicz, S. Koziel, Q.S. Cheng,and Y. Chen "Response
+                    features for fast EM-driven design of miniaturized impedance
+                    matching transformers,"
+                    <em>IEEE MTT-S International Conference on Numerical Electromagnetic and
+                        Multiphysics Modeling and Optimization (NEMO) for RF, Microwave
+                        and Terahertz Applications </em>(Beijing, China, July
+                    2016).&nbsp;
+                </li>
+                <li>S. Koziel, A. Bekasiewicz, Q.S. Cheng,and Y. Chen "Reduced-cost
+                    modeling of dual-band antennas exploiting response features,"
+                    <em>IEEE MTT-S International Conference on Numerical Electromagnetic and
+                        Multiphysics Modeling and Optimization (NEMO) for RF, Microwave
+                        and Terahertz Applications </em>(Beijing, China, July
+                    2016).
+                </li>
+                <li>S. Koziel, A. Bekasiewicz, and Q.S. Cheng, "Patch size setup and
+                    performance/cost trade-offs in multi-objective antenna optimization
+                    using domain patching technique,"
+                    <em>IEEE MTT-S International Conference on Numerical Electromagnetic and
+                        Multiphysics Modeling and Optimization (NEMO) for RF, Microwave
+                        and Terahertz Applications </em>(Beijing, China, July
+                    2016).
+                </li>
+                <li>S. Koziel, Q.S. Cheng, and Q. Zhang, "On low-cost space mapping
+                    optimization of antenna structures,"
+                    <em>IEEE MTT-S International Conference on Numerical Electromagnetic and
+                        Multiphysics Modeling and Optimization (NEMO) for RF, Microwave
+                        and Terahertz Applications </em>(Beijing, China, July
+                    2016).&nbsp;&nbsp;
+                </li>
+                <li>S.Koziel, A. Bekasiewicz, and Q.S. Cheng, "Geometry scaling of
+                    UWB antennas with respect to material properties of the substrate,"<em>IEEE MTT-S International
+                        Conference on Numerical Electromagnetic and
+                        Multiphysics Modeling and Optimization (NEMO) for RF, Microwave
+                        and Terahertz Applications </em>(Beijing, China, July
+                    2016).&nbsp;
+                </li>
+                <li>Q.S. Cheng, J.W. Bandler, and S. Koziel, "A Review of implicit space
+                    mapping optimization and modeling techniques,"
+                    <em>IEEE MTT-S International Conference on Numerical Electromagnetic and Multiphysics Modeling and
+                        Optimization</em> (Ottawa, ON, Canada, Aug.
+                    2015).
+                </li>
+                <li>Q.S. Cheng, J.W. Bandler, and S. Koziel, "A maximally flat
+                    quadratic interpolation enhanced input space mapping modeling
+                    approach,"
+                    <em>IEEE MTT-S Int. Microwave Symp. Digest</em> (Tampa, FL, June
+                    2014).
+                </li>
+                <li>S. Koziel, J.W. Bandler, and Q.S. Cheng, "Low-cost
+                    feature-based modeling of microwave structures,"
+                    <em>IEEE MTT-S Int. Microwave Symp. Digest</em> (Tampa, FL, June
+                    2014).
+
+                </li>
+                <li>
+                    Q.S. Cheng, J.W. Bandler, N.K. Nikolova, and Slawomir Koziel, "A
+                    statistical input space mapping approach for accommodating modeling
+                    residuals," <em>IEEE MTT-S Int. Microwave Symp. Digest</em>
+                    (Seattle, WA, June 2013).
+                </li>
+                <li>
+                    S. Koziel, J.W. Bandler, and Q.S. Cheng, "Enhanced fidelity modeling
+                    of microwave structures combining shape-preserving response
+                    prediction with space mapping,"<em> IEEE MTT-S Int. Microwave Symp.
+                    Digest </em>(Seattle, WA, June 2013).
+                </li>
+                <li>
+                    S. Tu, Q.S. Cheng, J. W. Bandler, and N. K. Nikolova, "Space
+                    mapping design exploiting library antenna models,"<em>
+                    IEEE AP-S/URSI Int. Symp. on Antennas and Propag.</em> (Chicago, IL,
+                    July 2012).
+                </li>
+                <li>
+                    J.W. Bandler and Q.S. Cheng, "Retrospective on microwave CAD and
+                    optimization technology," <em>IEEE MTT-S Int. Microwave Symp. Digest </em>
+                    (Montreal, QC, June 2012).
+                </li>
+                <li>
+                    S. Koziel, S. Ogurtsov, J.W. Bandler, and Q.S. Cheng, "Robust space
+                    mapping optimization exploiting EM-based models with adjoint
+                    sensitivities," <em>IEEE MTT-S Int. Microwave Symp. Digest</em>
+                    (Montreal, QC, June 2012).
+                </li>
+                <li>
+                    Q.S. Cheng, J.W. Bandler, N.K. Nikolova, and S. Koziel, "A space
+                    mapping schematic for fast EM-based modeling and design,"<em> IEEE
+                    MTT-S Int. Microwave Symp. Digest</em> (Montreal, QC, June 2012).
+                </li>
+                <li>
+                    S. Koziel, J.W. Bandler, and Q.S. Cheng, "Tuning space mapping for
+                    microwave design optimization," <em>Int. Review of Progress in
+                    Applied Computational Electromagnetics</em> (Williamsburg, VA,
+                    2011), pp. 381-386.
+                </li>
+                <li>
+                    S. Koziel, Q.S. Cheng, and J.W. Bandler, "Comparative study of
+                    space-mapping-based optimization techniques for microwave design,"
+                    <em>Microwave Integrated Circuits Conf. (EuMIC) </em>(Manchester,
+                    UK, Oct. 2011), pp. 422-425.
+                </li>
+                <li>
+                    A. Khalatpour, R.K. Amineh, Q.S. Cheng, J.W. Bandler, and N.K.
+                    Nikolova, "Adjoint-accelerated design framework for novel materials
+                    in microwave applications," <em>European Microwave Conf.</em>
+                    (Manchester, UK, Oct. 2011), pp. 440-443.
+                </li>
+                <li>
+                    Q.S. Cheng, J.W. Bandler, N.K. Nikolova, and S. Koziel, "Fast
+                    space mapping modeling with adjoint sensitivity" <em>
+                    IEEE MTT-S Int. Microwave Symp. Digest</em>&nbsp; (Baltimore, MD, June
+                    2011).
+                </li>
+                <li>J.W. Bandler, Q.S. Cheng, M.H. Bakr, S. Koziel, and N.K.
+                    Nikolova, "Electromagnetics-based CAD and optimization of microwave
+                    circuits exploiting time-domain techniques," <em>IEEE MTT-S Int.
+                        Microwave Symp. Digest</em> (Baltimore, MD, June 2011).
+                </li>
+                <li>S. Koziel, J.W. Bandler, and Q.S. Cheng, "Design
+                    optimization of microwave circuits through fast embedded tuning
+                    space mapping," <em>European Microwave Conf.</em> (Paris, France,
+                    Sept. 2010), pp. 1186-1189.
+                </li>
+                <li>Q.S. Cheng, J.W. Bandler, and S. Koziel, "Response
+                    corrected tuning space mapping for yield estimation and design
+                    centering,"
+                    <em>IEEE MTT-S Int. Microwave Symp. Digest </em>
+                    (Anaheim, CA, May 2010), pp. 193-196.
+                </li>
+                <li>S. Koziel, J.W. Bandler, and Q.S. Cheng, "Adaptively
+                    constrained parameter extraction for robust space mapping
+                    optimization of microwave circuits," <em>IEEE MTT-S Int. Microwave
+                        Symp. Digest </em>
+                    (Anaheim, CA, May 2010), pp. 205-208.
+                </li>
+                <li>Q.S. Cheng, J.W. Bandler, and S. Koziel, "Tuning space
+                    mapping optimization exploiting embedded surrogate elements," <em>
+                        IEEE MTT-S Int. Microwave Symp. Digest </em>
+                    (Boston, MA, June 2009), pp. 1257-1260.
+                </li>
+                <li>S. Koziel, J.W. Bandler, and Q.S. Cheng,
+                    "Trust-region-based convergence safeguards for space mapping design
+                    optimization of microwave circuits," <em>IEEE MTT-S Int. Microwave
+                        Symp. Digest</em>
+                    (Boston, MA, June 2009), pp. 1261-1264.
+                </li>
+                <li>S. Koziel, Q.S. Cheng, and J.W. Bandler, "Microwave
+                    design optimization using implicit space mapping with adaptive
+                    selection of preassigned parameters," <em>Int. Review of Progress in
+                        Applied Computational Electromagnetics, ACES 2009</em>, (Monterey,
+                    CA, Mar. 8-12, 2009), pp. 59-64 .
+                </li>
+                <li>Q.S. Cheng, J.W. Bandler, and S. Koziel, "A simple ADS
+                    schematic for space mapping," <em>IEEE MTT-S Int. Microwave Workshop
+                        Series (IMWS 2009) On Signal Integrity and High -Speed Interconnects</em>
+                    (Guadalajara, Mexico, Feb. 2009).
+                </li>
+                <li>J. Meng, S. Koziel, J.W. Bandler, M.H. Bakr, and Q.S. Cheng, "Tuning space mapping: a novel
+                    technique for engineering
+                    design optimization," <em>IEEE MTT-S Int. Microwave Symp. Digest</em>
+                    (Atlanta, GA, June 2008), pp 991-994.
+                </li>
+                <li>S. Koziel, J.W. Bandler, and Q.S. Cheng, "Adaptive space
+                    mapping with convergence enhancement for optimization of microwave
+                    structures and devices,"<em> IEEE MTT-S Int. Microwave Symp. Digest</em>
+                    (Atlanta, GA, June 2008), pp. 987-990.
+                </li>
+                <li>S. Koziel, Q.S. Cheng, and J.W. Bandler, "Improving
+                    efficiency of space mapping optimization of microwave structures and
+                    devices,"
+                    <em>IEEE MTT-S Int. Microwave Symp. Digest</em> (Honolulu, HI, June
+                    2007), pp. 1995-1998.
+                </li>
+                <li>Q.S. Cheng and J.W. Bandler, "An implicit space mapping
+                    technique for component modeling," <em>Proc. 36th European Microwave
+                        Conf.</em> (Manchester, UK, Sep. 2006), pp. 458-461.
+                </li>
+                <li>J.W. Bandler and Q.S. Cheng, "New developments in space
+                    mapping CAD technology," (invited), <em>China-Japan Joint Microwave
+                        Conference</em> (Chengdu, China, Aug. 2006), pp. 1-4.
+                </li>
+                <li>Q.S. Cheng and J.W. Bandler, "An automated space mapping
+                    framework," <em>Frontiers in Applied Computational Electromagnetics
+                        (FACE 2006)</em> (Victoria, BC, Canada, June 2006).
+                </li>
+                <li>J.W. Bandler, Q.S. Cheng, and S. Koziel, "Implementable
+                    space mapping approach to enhancement of microwave device models,"
+                    <em>IEEE MTT-S Int. Microwave Symp. Digest</em> (Long Beach, CA,
+                    June 2005), pp. 1139-1142.
+                </li>
+                <li>J.W. Bandler, Q.S. Cheng, D.M. Hailu, A.S. Mohamed, M.H.
+                    Bakr, K. Madsen, and F. Pedersen, "Recent trends in space mapping
+                    technology," <em>Proc. 2004 Asia-Pacific Microwave Conf. (APMC04)</em>
+                    (New Delhi, India, Dec. 2004).
+                </li>
+                <li>J.W. Bandler and Q.S. Cheng, "Space mapping: a novel
+                    design and modeling methodology," <em>4th Int. Conference on
+                        Microwave and Millimeter Wave Technology 2004</em> (Beijing, China,
+                    Aug. 2004), pp. 785-788.
+                </li>
+                <li>J.W. Bandler, Q.S. Cheng, S.A. Dakroury, D.M. Hailu, K.
+                    Madsen, A.S. Mohamed, and F. Pedersen, "Space mapping interpolating
+                    surrogates for highly optimized EM-based design of microwave
+                    devices,"<em> IEEE MTT-S Int. Microwave Symp. Digest</em> (Fort
+                    Worth, TX, June 2004), pp. 1565-1568.
+                </li>
+                <li>J.W. Bandler, Q.S. Cheng, D.H. Gebre-Mariam, and N.K.
+                    Nikolova, "An implementable space mapping design framework," <em>
+                        IEEE MTT-S Int. Microwave Symp. Digest</em> (Fort Worth, TX, June
+                    2004), pp. 703-706.
+                </li>
+                <li>J.W. Bandler and Q.S. Cheng, "Advances in space mapping
+                    optimization using implicit and output mappings," <em>The 3rd Annual
+                        McMaster Optimization Conference: Theory and Applications (MOPTA 03)</em>
+                    (Hamilton, ON, Canada, July 2003).
+                </li>
+                <li>J.W. Bandler, Q.S. Cheng, S.A. Dakroury, A.S. Mohamed, M.H. Bakr, K. Madsen, and J. S"ndergaard,
+                    "Space mapping: the
+                    state of the art," <em>Int. Microwave and Optoelectronics Conference</em>
+                    (Iguazu Falls, Brazil, Sep. 2003), pp. 951-956.
+                </li>
+                <li>J.W. Bandler, Q.S. Cheng, D.H. Gebre-Mariam, K. Madsen,
+                    F. Pedersen, and J. S"ndergaard, "EM-based surrogate modeling and
+                    design exploiting implicit, frequency and output space mappings,"
+                    <em>IEEE MTT-S Int. Microwave Symp. Digest</em> (Philadelphia, PA,
+                    June 2003), pp. 1003-1006.
+                </li>
+                <li>J.W. Bandler and Q.S. Cheng, "Implicit space mapping
+                    engineering optimization exploiting preassigned parameters," <em>The
+                        2nd Annual McMaster Optimization Conference: Theory and Applications
+                        (MOPTA 02)</em>
+                    (Hamilton, ON, Canada, Aug. 2002).
+                </li>
+                <li>J.W. Bandler, Q.S. Cheng, N. Georgieva, and M.A. Ismail,
+                    "Implicit space mapping EM-based modeling and design using
+                    preassigned parameters," <em>IEEE MTT-S Int. Microwave Symp. Digest</em>
+                    (Seattle, WA, June 2002), pp. 713-716.
+                </li>
+                <li>M.H. Bakr, J.W. Bandler, Q.S. Cheng, M.A.
+                    Ismail, and J.E. Rayas-S"nchez, "SMX"A novel
+                    object-oriented optimization system," <em>IEEE MTT-S
+                        Int. Microwave Symp. Digest</em> (Phoenix, AZ, May
+                    2001), pp. 2083-2086.
+                </li>
+            </ol>
+
+            <p id="text3"></p>
+            <button id="showAll3">show all</button>
+            <ol id="Workshop" reversed>
+                <li>Q.S. Cheng, "Fast Modeling and Optimization Methods Based on Electromagnetic Simulation," Dassault Systemes SIMULIA CST Electromagnetic Simulation Seminar, July 5, 2023.
+                </li>
+				<li>Q.S. Cheng, "Fast Modeling and Optimization Methods Based on 
+				Electromagnetic Simulation," Huawei 2023 Electromagnetic Protection and Electrical Safety Engineering Technology Conference, May 12, 2023.
+                </li>
+				<li>Q.S. Cheng, "Engineering Ethics: Autonomous Vehicle Case Study," Tianjin University, Tianjin, China, May 13, 2022.
+                </li>
+				<li>Q.S. Cheng, "Surrogate-based EM design methods for RF/Microwave
+                    Devices," Tianjin University, Tianjin, China, September 1, 2021.
+                </li>
+                <li>Q.S. Cheng, "Physics-based modeling and optimization for
+                    RF/microwave devices," UESTC, Chengdu, China, May 14, 2019.
+                </li>
+                <li>M. Yu and Q.S. Cheng, "Smart modeling of large RF/microwave
+                    problems," Huawei Shanghai Research Center, China, Dec. 3, 2018.
+                </li>
+                <li>Q.S. Cheng, "Recent trends in surrogate-based optimization,
+                    tuning and modeling," University of Waterloo, Waterloo, Canada, Aug.9, 2018.
+                </li>
+                <li>Q.S. Cheng, "Space mapping and surrogate: microwave applications," Xidian University, Xi'an, China,
+                    Sep. 29, 2017.
+                </li>
+                <li>Q.S. Cheng, "CAD framework for novel materials in microwave
+                    applications,"Metamaterial Science and Applications Workshop,
+                    Chengdu, China, Apr. 8, 2016.&nbsp;
+                </li>
+                <li>Q.S. Cheng, "Tuning space mapping: the state of the art,"<em> IMS Workshop WFI EM-Based Tuning
+                    Techniques, Computer-Aided Tuning and Tuning Space Mapping</em>, Phoenix, AZ, May 2015.
+                </li>
+                <li> Q.S. Cheng and J.W. Bandler, "Implementation of space mapping in commercial software,"
+                    <em>IMS Workshop WFE Recent Advances in Space Mapping Modeling and Optimization</em>, Tampa Bay, FL,
+                    June 2014.
+                </li>
+                <li>Q.S. Cheng, J.W. Bandler, S. Koziel, and K. Madsen, "Modeling
+                    and optimization of microwave and RF circuits exploiting space
+                    mapping," Tianjin University, Tianjin, China, Jan. 12, 2014.
+                </li>
+                <li>Q.S. Cheng and J.W. Bandler, "Implementation of space mapping
+                    optimization and modeling in Agilent ADS," <em>Presentation to
+                        Design Engineering Teams</em>, Freescale Semiconductor Inc., Tempe,
+                    AZ, Oct. 25, 2012.
+                </li>
+                <li>Q.S. Cheng, J.W. Bandler, and S. Koziel "Tuning Space
+                    Mapping: The State of the Art," <em>The Third International Workshop
+                        on Surrogate Modelling and Space Mapping For Engineering
+                        Optimization (SMSMEO 2012)</em> (Reykjavik University, Iceland, Aug.
+                    9-11, 2012).
+                </li>
+                <li>J.W. Bandler and Q.S. Cheng, "The Essence of Space
+                    Mapping: Less is More," <em>The Third International Workshop on
+                        Surrogate Modelling and Space Mapping For Engineering Optimization
+                        (SMSMEO 2012)</em>
+                    (Reykjavik University, Iceland, Aug. 9-11, 2012).
+                </li>
+                <li>J.W. Bandler, Q.S. Cheng, and S. Koziel "Model Generation
+                    Using Space Mapping Techniques," <em>IEEE MTT-S Int. Microwave Symp.
+                        Workshop on Advanced Techniques For Electromagnetics-based Model
+                        Generation</em> (Montreal, QC, Canada, June 18, 2012)
+                </li>
+                <li>Q.S. Cheng, J.W. Bandler, and S. Koziel "Tuning Space
+                    Mapping: The State of the Art," <em>Session 2P6&nbsp; Microwave and
+                        Millimeter Wave Circuits and Devices, The 31st Progress In
+                        Electromagnetics Research Symposium (PIERS)</em> (Kuala Lumpur,
+                    Malaysia, 28 March, 2012).
+                </li>
+                <li>Q.S. Cheng, J.W. Bandler, N.K. Nikolova, and S. Koziel,
+                    "Simulation-Driven Optimization and Modeling with Adjoint
+                    Sensitivities," <em>Int. Workshop on Advances in Simulation-Driven
+                        Optimization and Modeling (ASDOM 2011)</em> (Reykjavik University,
+                    Iceland, Aug. 13-14, 2011)
+                </li>
+                <li>J.W. Bandler, Q.S. Cheng, and S. Koziel, "Exploitation of
+                    Simulators and Surrogates in Optimization-driven Design: the Art and
+                    the Science," <em>Int. Workshop on Advances in Simulation-Driven
+                        Optimization and Modeling (ASDOM 2011)</em> (Reykjavik University,
+                    Iceland, Aug. 13-14, 2011).
+                </li>
+                <li>J.W. Bandler, Q.S. Cheng, and S. Koziel, "Microwave CAD
+                    Using Surrogate Optimization and Space Mapping," <em>IEEE MTT-S Int.
+                        Microwave Symp. Workshop on WME: Simulation- and Surrogate-Driven
+                        Microwave Design Technology</em> (Baltimore, MD,&nbsp;June 6, 2011).
+                </li>
+                <li>Q.S. Cheng, J.W. Bandler, S. Koziel, and K. Madsen,
+                    "Advanced EM design using surrogate models and space mapping," <em>
+                        Academic Lecture</em>, (Zhejiang University, Hangzhou, Zhejiang,
+                    China, June 22, 2010).
+                </li>
+                <li>J.W. Bandler, Q.S. Cheng, S. Koziel, "Surrogate modeling
+                    and space mapping: the state of the art," <em>IEEE MTT-S Int.
+                        Microwave Symp. Workshop on EM-Based Microwave Optimization
+                        Technology: State of the Art and Applications</em> (Boston, MA, June
+                    12, 2009).
+                </li>
+                <li>J.W. Bandler, Q.S. Cheng, S. Koziel, and K. Madsen,
+                    "Rapid design with electromagnetic accuracy: space mapping and
+                    beyond,"
+                    <em>IEEE MTT-S Int. Microwave Symp. Workshop on Advances in CAD
+                        Techniques for EM Modeling and Design Optimization</em>
+                    (Atlanta, GA, June 15, 2008).
+                </li>
+                <li>J.W. Bandler, Q.S. Cheng, S. Koziel, and K.Madsen,
+                    "Engineering modeling and optimization via space mapping: from
+                    concept to practice," <em>Workshop on Space-Mapping and Efficient
+                        Optimization</em>
+                    (CWI, Amsterdam, The Netherlands, Nov. 13, 2006).
+                </li>
+                <li>A.S. Mohamed, S. Koziel, J.W. Bandler, M.H. Bakr, and
+                    Q.S. Cheng, "Rosenbrock-like problems: SMF versus other SBO
+                    implementations," <em>Second Int. Workshop on Surrogate Modelling
+                        and Space Mapping for Engineering Optimization (SMSMEO-06)</em>
+                    (Lyngby, Denmark, Nov. 9-11, 2006).
+                </li>
+                <li>J.W. Bandler, Q.S. Cheng, S. Koziel, and K. Madsen, "Why
+                    space mapping works," <em>Second Int. Workshop on Surrogate
+                        Modelling and Space Mapping for Engineering Optimization (SMSMEO-06)</em>
+                    (Lyngby, Denmark, Nov. 9-11, 2006).
+                </li>
+                <li>J.W. Bandler, Q.S. Cheng, and S. Koziel, "Space mapping
+                    technology for EM-based modeling and optimization: the state of the
+                    art," <em>Second ITESO-Intel International Workshop on Signal
+                        Integrity (I3WSI-2006)</em> (Guadalajara, Mexico, Oct.
+                    5-6, 2006).
+                </li>
+                <li>J.W. Bandler, Q.S. Cheng, S. Koziel, and K. Madsen,
+                    "Space mapping technology: what it is and why it works," <em>IEEE
+                        MTT-S Int. Microwave Symp. Workshop on Microwave Component Design
+                        Using Space Mapping Technology</em> (San Francisco, CA, June 2006).
+                </li>
+                <li>J.W. Bandler, Q.S. Cheng, S. Koziel, A.S. Mohamed, and K.
+                    Madsen, "Automated design and optimization exploiting surrogate
+                    models and space mapping," <em>IEEE MTT-S Int. Microwave Symp.
+                        Workshop on Advances in Automated Modeling and Microwave Design</em>
+                    (Long Beach, CA, June 2005).
+                </li>
+                <li>J.W. Bandler, Q.S. Cheng, and D.M. Hailu, "Device and
+                    component modeling and optimization exploiting space mapping and
+                    space-mapping based surrogate modeling," <em>IEEE MTT-S Int.
+                        Microwave Symp. Workshop on Advances and New Directions in Device
+                        Modeling and Design Optimization for Microwave CAD</em> (Fort Worth,
+                    TX, June 2004).
+                </li>
+                <li>J.W. Bandler and Q.S. Cheng, "Implicit space mapping
+                    optimization exploiting preassigned parameters," <em>Micronet Annual
+                        Workshop 2003</em> (Toronto, ON, Canada, Sep. 2003).
+                </li>
+                <li>J.W. Bandler, Q.S. Cheng, S.A. Dakroury, A.S. Mohamed,
+                    M.H. Bakr, K. Madsen, and J. S"ndergaard, "EM-based component
+                    modeling and design using space mapping," <em>IEEE MTT-S Int.
+                        Microwave Symp. Workshop on Microwave Component Design Using Space
+                        Mapping Methodologies</em> (Philadelphia, PA, June 2003).
+                </li>
+                <li>J.W. Bandler and Q.S. Cheng, "Theory and applications of
+                    implicit space mapping using preassigned parameters," <em>Workshop
+                        on Optimization Engines for Wireless and Microwave Computer Aided
+                        Engineering</em> <em>at Carleton University</em>
+                    (Ottawa, ON, Canada, June 2002).
+                </li>
+                <li>J.W. Bandler and Q.S. Cheng, "Space mapping approaches to
+                    EM-based device modeling and component design," <em>IEEE MTT-S Int.
+                        Microwave Symp. Workshop on Microwave Component Design Using Space
+                        Mapping Methodologies</em> (Seattle, WA, June 2002).
+                </li>
+                <li>J.W. Bandler, M.H. Bakr, Q.S. Cheng, M.A. Ismail, and
+                    J.E. Rayas-S"nchez, "Applications of space mapping optimization
+                    technology to filter design," <em>IEEE MTT-S Int. Microwave Symp.
+                        Workshop on State-of-The-Art Filter Design Using EM and Circuit
+                        Simulation Techniques</em> (Phoenix, AZ, May 2001).
+                </li>
+            </ol>
+
+
+        </td>
+    </tr>
+
+</table>
+
+
+<script> // 手机适配
+
+    //detect mobile device
+    var isMobile = false; //initiate as false
+    // device detection
+    if (/(android|bb\d+|meego).+mobile|avantgo|bada\/|blackberry|blazer|compal|elaine|fennec|hiptop|iemobile|ip(hone|od)|ipad|iris|kindle|Android|Silk|lge |maemo|midp|mmp|netfront|opera m(ob|in)i|palm( os)?|phone|p(ixi|re)\/|plucker|pocket|psp|series(4|6)0|symbian|treo|up\.(browser|link)|vodafone|wap|windows (ce|phone)|xda|xiino/i.test(navigator.userAgent)
+        || /1207|6310|6590|3gso|4thp|50[1-6]i|770s|802s|a wa|abac|ac(er|oo|s\-)|ai(ko|rn)|al(av|ca|co)|amoi|an(ex|ny|yw)|aptu|ar(ch|go)|as(te|us)|attw|au(di|\-m|r |s )|avan|be(ck|ll|nq)|bi(lb|rd)|bl(ac|az)|br(e|v)w|bumb|bw\-(n|u)|c55\/|capi|ccwa|cdm\-|cell|chtm|cldc|cmd\-|co(mp|nd)|craw|da(it|ll|ng)|dbte|dc\-s|devi|dica|dmob|do(c|p)o|ds(12|\-d)|el(49|ai)|em(l2|ul)|er(ic|k0)|esl8|ez([4-7]0|os|wa|ze)|fetc|fly(\-|_)|g1 u|g560|gene|gf\-5|g\-mo|go(\.w|od)|gr(ad|un)|haie|hcit|hd\-(m|p|t)|hei\-|hi(pt|ta)|hp( i|ip)|hs\-c|ht(c(\-| |_|a|g|p|s|t)|tp)|hu(aw|tc)|i\-(20|go|ma)|i230|iac( |\-|\/)|ibro|idea|ig01|ikom|im1k|inno|ipaq|iris|ja(t|v)a|jbro|jemu|jigs|kddi|keji|kgt( |\/)|klon|kpt |kwc\-|kyo(c|k)|le(no|xi)|lg( g|\/(k|l|u)|50|54|\-[a-w])|libw|lynx|m1\-w|m3ga|m50\/|ma(te|ui|xo)|mc(01|21|ca)|m\-cr|me(rc|ri)|mi(o8|oa|ts)|mmef|mo(01|02|bi|de|do|t(\-| |o|v)|zz)|mt(50|p1|v )|mwbp|mywa|n10[0-2]|n20[2-3]|n30(0|2)|n50(0|2|5)|n7(0(0|1)|10)|ne((c|m)\-|on|tf|wf|wg|wt)|nok(6|i)|nzph|o2im|op(ti|wv)|oran|owg1|p800|pan(a|d|t)|pdxg|pg(13|\-([1-8]|c))|phil|pire|pl(ay|uc)|pn\-2|po(ck|rt|se)|prox|psio|pt\-g|qa\-a|qc(07|12|21|32|60|\-[2-7]|i\-)|qtek|r380|r600|raks|rim9|ro(ve|zo)|s55\/|sa(ge|ma|mm|ms|ny|va)|sc(01|h\-|oo|p\-)|sdk\/|se(c(\-|0|1)|47|mc|nd|ri)|sgh\-|shar|sie(\-|m)|sk\-0|sl(45|id)|sm(al|ar|b3|it|t5)|so(ft|ny)|sp(01|h\-|v\-|v )|sy(01|mb)|t2(18|50)|t6(00|10|18)|ta(gt|lk)|tcl\-|tdg\-|tel(i|m)|tim\-|t\-mo|to(pl|sh)|ts(70|m\-|m3|m5)|tx\-9|up(\.b|g1|si)|utst|v400|v750|veri|vi(rg|te)|vk(40|5[0-3]|\-v)|vm40|voda|vulc|vx(52|53|60|61|70|80|81|83|85|98)|w3c(\-| )|webc|whit|wi(g |nc|nw)|wmlb|wonu|x700|yas\-|your|zeto|zte\-/i.test(navigator.userAgent.substr(0, 4))) {
+
+
+        //rearrange table
+        var oldTable = document.getElementsByTagName("table")[0];
+
+        var length = oldTable.rows.length;
+
+        var newTable = document.createElement("table");
+
+        // set column number = 1
+        var columnNum = 1;
+
+        var column = 0, row = 0;
+
+        var i = 0;
+        for (var r = 0, n = oldTable.rows.length; r < n; r++) {
+
+            // start new row
+
+            for (var c = 0, m = oldTable.rows[r].cells.length; c < m; c++) {
+                if (column == 0) {
+                    newTable.insertRow(-1);
+                }
+
+                row = Math.floor(i / columnNum);
+                column = Math.floor(i % columnNum);
+                // add new column
+                newTable.rows[row].insertCell(-1);
+                newTable.rows[row].cells[column].innerHTML = oldTable.rows[r].cells[c].innerHTML;
+                i++;
+            }
+
+        }
+
+        // insert new table
+        insertAfter(newTable, oldTable);
+
+        // delete old table
+        oldTable.parentNode.removeChild(oldTable);
+    }
+
+    function insertAfter(newElement, targetElement) {
+        targetElement.parentNode.insertBefore(newElement, targetElement.nextSibling);
+
+    }
+
+
+</script>
+
+
+
+<!-- <script> //展示文章的脚本
+    function show_result(listContainerName,btnName,type){
+        document.addEventListener('DOMContentLoaded', function() {
+        const listContainer = document.getElementById(listContainerName);
+        const toggleDisplayBtn = document.getElementById(btnName);
+
+        let journalItems = [];
+        let showingAll = false; // 标记是否正在展示所有文章
+
+        // 请求并解析HTML
+
+        const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+
+        if (isMobile) {
+                        pageUrl = 'index_mobile.htm';
+                    } else {
+                        pageUrl = 'index.htm';
+        }
+        articlesDisplay(pageUrl,type)
+        });
+    }
+
+    function displayLatestTenArticles() {
+        const itemsToShow = journalItems.slice(0, 10);
+        listContainer.innerHTML = `<ol reversed>${itemsToShow.map(item => item.outerHTML).join('')}</ol>`;
+    }
+
+    function articlesDisplay(path,type){
+        fetch(path) // 替换为实际路径
+        .then(response => response.text())
+        .then(html => {
+            const parser = new DOMParser();
+            const doc = parser.parseFromString(html, 'text/html');
+            const journalOl = doc.querySelector(type);
+            journalItems = journalOl ? Array.from(journalOl.children) : [];
+
+            displayLatestTenArticles(); // 默认显示最新的10篇文章
+            toggleDisplayBtn.textContent = `Show all articles (${journalItems.length})`;
+        })
+        .catch(error => {
+            console.error('Failed to load the list', error);
+            listContainer.textContent = 'Failed to load list.';
+        });
+
+        toggleDisplayBtn.addEventListener('click', () => {
+        if (showingAll) {
+            displayLatestTenArticles();
+            toggleDisplayBtn.textContent = `Show all articles (${journalItems.length})`;
+        } else {
+            listContainer.innerHTML = `<ol reversed>${journalItems.map(item => item.outerHTML).join('')}</ol>`;
+            toggleDisplayBtn.textContent = 'Show latest 10 articles';
+        }
+        showingAll = !showingAll;
+    });
+    }
+
+
+
+</script> -->
+
+<script>
+    $("li:contains('Q.S. Cheng')").html(function (_, html) {
+        return html.replace(/(Q.S. Cheng)/gi, '<b>$1</b>');
+    });
+
+    // 获取列表元素
+    const journal = document.getElementById("Journal");
+    // 获取列表中的所有li元素
+    const listItems = journal.getElementsByTagName("li");
+    // 获取省略号按钮元素
+    const ellipsisButton = document.getElementById("showAll1");
+
+    // 统计文章数量
+    const itemCount = listItems.length;
+    // 将结果显示在指定的<p>元素中
+    const textJournal = document.querySelector("#text1");
+    textJournal.textContent = "Journal Papers (" + itemCount + " in total)";
+
+    // 对第10项之后的内容省略
+    for (let i = 10; i < listItems.length; i++) {
+        const item = listItems[i];
+        item.style.display = "none";
+    }
+
+    // 初始化隐藏状态
+    let isHidden = true;
+
+    // 添加省略号按钮
+    updateButtonLabel();
+
+    // 添加按钮的点击事件，点击后展开/隐藏省略的列表项
+
+    ellipsisButton.onclick = function () {
+        for (let i = 10; i < listItems.length; i++) {
+            const item = listItems[i];
+            item.style.display = isHidden ? "list-item" : "none";
+        }
+        isHidden = !isHidden;
+        updateButtonLabel();
+    };
+
+    // 更新按钮的文本
+    function updateButtonLabel() {
+        ellipsisButton.innerText = isHidden ? "Show all" : "Hide";
+    }
+</script>
+
+<script>
+    $("li:contains('Q.S. Cheng')").html(function (_, html) {
+        return html.replace(/(Q.S. Cheng)/gi, '<b>$1</b>');
+    });
+
+    // 获取列表元素
+    const conference = document.getElementById("Conference");
+    // 获取列表中的所有li元素
+    const listItems2 = conference.getElementsByTagName("li");
+    // 获取省略号按钮元素
+    const ellipsisButton2 = document.getElementById("showAll2");
+
+    // 统计文章数量
+    const itemCount2 = listItems2.length;
+    // 将结果显示在指定的<p>元素中
+    const textConference = document.querySelector("#text2");
+    textConference.textContent = "Conference Proceedings (refereed or invited) (" + itemCount2 + " in total)";
+
+    // 对第10项之后的内容省略
+    for (let i = 10; i < listItems2.length; i++) {
+        const item2 = listItems2[i];
+        item2.style.display = "none";
+    }
+
+    // 初始化隐藏状态
+    let isHidden2 = true;
+
+    // 添加省略号按钮
+    updateButtonLabel2();
+
+    // 添加按钮的点击事件，点击后展开/隐藏省略的列表项
+    ellipsisButton2.onclick = function () {
+        for (let i = 10; i < listItems2.length; i++) {
+            const item2 = listItems2[i];
+            item2.style.display = isHidden2 ? "list-item" : "none";
+        }
+        isHidden2 = !isHidden2;
+        updateButtonLabel2();
+    };
+
+    // 更新按钮的文本
+    function updateButtonLabel2() {
+        ellipsisButton2.innerText = isHidden2 ? "Show all" : "Hide";
+    }
+</script>
+
+<script>
+    $("li:contains('Q.S. Cheng')").html(function (_, html) {
+        return html.replace(/(Q.S. Cheng)/gi, '<b>$1</b>');
+    });
+
+    // 获取列表元素
+    const workshop = document.getElementById("Workshop");
+    // 获取列表中的所有li元素
+    const listItems3 = workshop.getElementsByTagName("li");
+    // 获取省略号按钮元素
+    const ellipsisButton3 = document.getElementById("showAll3");
+
+    // 统计文章数量
+    const itemCount3 = listItems3.length;
+    // 将结果显示在指定的<p>元素中
+    const textWorkshop = document.querySelector("#text3");
+    textWorkshop.textContent = "Workshop and Invited Seminar Presentations (" + itemCount3 + " in total)";
+
+    // 对第10项之后的内容省略
+    for (let i = 10; i < listItems3.length; i++) {
+        const item3 = listItems3[i];
+        item3.style.display = "none";
+    }
+
+    // 初始化隐藏状态
+    let isHidden3 = true;
+
+    // 添加省略号按钮
+    updateButtonLabel3();
+
+    // 添加按钮的点击事件，点击后展开/隐藏省略的列表项
+    ellipsisButton3.onclick = function () {
+        for (let i = 10; i < listItems3.length; i++) {
+            const item3 = listItems3[i];
+            item3.style.display = isHidden3 ? "list-item" : "none";
+        }
+        isHidden3 = !isHidden3;
+        updateButtonLabel3();
+    };
+
+    // 更新按钮的文本
+    function updateButtonLabel3() {
+        ellipsisButton3.innerText = isHidden3 ? "Show all" : "Hide";
+    }
+</script>
+
+</body>
+<script>
+    $("div:contains('Q.S. Cheng')").html(function (_, html) {
+                    return html.replace(/(Q.S. Cheng)/gi, '<b>$1</b>');
+                });
+</script>
+</html>
