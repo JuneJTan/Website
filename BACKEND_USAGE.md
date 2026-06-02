@@ -11,6 +11,7 @@ This project now uses Django for the website backend and admin editing.
 Open:
 
 - Front page: `http://127.0.0.1:8000/`
+- Chinese front page: `http://127.0.0.1:8000/zh/`
 - Admin: `http://127.0.0.1:8000/admin/`
 
 ## Create Admin User
@@ -28,6 +29,13 @@ After logging into `/admin/`, the editable modules are:
 - Courses
 - News items
 - Positions
+
+Most content models include English and Chinese fields. The English page uses
+`*_en` fields and the Chinese page uses `*_cn` fields when available, falling
+back to English where a Chinese value is empty.
+
+`Site profile` controls bilingual homepage text such as hero title, hero text,
+professor biography, biography cards, contact details, and uploaded logos/images.
 
 ## Uploaded Files
 

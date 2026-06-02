@@ -22,9 +22,11 @@ from django.urls import path
 from cms.views import home
 
 urlpatterns = [
-    path('', home, name='home'),
+    path('', home, {"lang": "en"}, name='home'),
+    path('zh/', home, {"lang": "zh"}, name='home_zh'),
     path('admin/', admin.site.urls),
 ]
 
 if settings.DEBUG:
+    urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

@@ -1,0 +1,56 @@
+{% extends "admin/base_site.html" %}
+{% load i18n %}
+
+{% block breadcrumbs %}
+<div class="breadcrumbs">
+  <a href="{% url 'admin:index' %}">首页</a>
+  &rsaquo; <a href="{% url 'admin:app_list' app_label=opts.app_label %}">{{ opts.app_config.verbose_name }}</a>
+  &rsaquo; <a href="../">论文成果</a>
+  &rsaquo; 导入 BibTeX
+</div>
+{% endblock %}
+
+{% block content %}
+<div id="content-main">
+  <p>
+    粘贴 BibTeX 内容或上传 .bib 文件后，系统会自动解析标题、作者、年份、期刊/会议、卷期页码、DOI 和链接，
+    并生成接近旧网页格式的 raw citation。
+  </p>
+
+  <form method="post" enctype="multipart/form-data" novalidate>
+    {% csrf_token %}
+    {{ form.non_field_errors }}
+    <fieldset class="module aligned">
+      <div class="form-row">
+        {{ form.bibtex_text.errors }}
+        {{ form.bibtex_text.label_tag }}
+        {{ form.bibtex_text }}
+        <div class="help">{{ form.bibtex_text.help_text }}</div>
+      </div>
+      <div class="form-row">
+        {{ form.bibtex_file.errors }}
+        {{ form.bibtex_file.label_tag }}
+        {{ form.bibtex_file }}
+        <div class="help">{{ form.bibtex_file.help_text }}</div>
+      </div>
+    </fieldset>
+
+    <div class="submit-row">
+      <input type="submit" value="导入 BibTeX" class="default">
+      <a href="../" class="button cancel-link">取消</a>
+    </div>
+  </form>
+
+  <h2>示例</h2>
+  <pre style="white-space: pre-wrap; background: var(--darkened-bg); padding: 12px;">@article{cheng2026example,
+  author = {Qingsha S. Cheng and A. Author},
+  title = {Example microwave modeling paper},
+  journal = {IEEE Transactions on Microwave Theory and Techniques},
+  year = {2026},
+  volume = {74},
+  number = {1},
+  pages = {1--10},
+  doi = {10.0000/example}
+}</pre>
+</div>
+{% endblock %}

@@ -15,7 +15,27 @@ class SiteProfile(TimeStampedModel):
     subtitle_en = models.CharField(max_length=240, blank=True)
     subtitle_cn = models.CharField(max_length=240, blank=True)
     hero_title = models.CharField(max_length=160, default="em+ Lab")
+    hero_title_cn = models.CharField(max_length=160, blank=True)
     hero_text = models.TextField(blank=True)
+    hero_text_cn = models.TextField(blank=True)
+    professor_name_en = models.CharField(max_length=160, default="Qingsha S. Cheng")
+    professor_name_cn = models.CharField(max_length=160, blank=True)
+    professor_title_en = models.CharField(max_length=160, default="Associate Professor, SUSTech")
+    professor_title_cn = models.CharField(max_length=160, blank=True)
+    biography_en = models.TextField(blank=True)
+    biography_cn = models.TextField(blank=True)
+    research_focus_en = models.TextField(blank=True)
+    research_focus_cn = models.TextField(blank=True)
+    bio_academic_path_en = models.TextField(blank=True)
+    bio_academic_path_cn = models.TextField(blank=True)
+    bio_sustech_appointment_en = models.TextField(blank=True)
+    bio_sustech_appointment_cn = models.TextField(blank=True)
+    bio_professional_service_en = models.TextField(blank=True)
+    bio_professional_service_cn = models.TextField(blank=True)
+    bio_conference_activity_en = models.TextField(blank=True)
+    bio_conference_activity_cn = models.TextField(blank=True)
+    bio_impact_en = models.TextField(blank=True)
+    bio_impact_cn = models.TextField(blank=True)
     email = models.EmailField(blank=True)
     orcid_url = models.URLField(blank=True)
     google_scholar_url = models.URLField(blank=True)
@@ -30,8 +50,8 @@ class SiteProfile(TimeStampedModel):
     orcid_icon = models.FileField(upload_to="site/icons/", blank=True)
 
     class Meta:
-        verbose_name = "Site profile"
-        verbose_name_plural = "Site profile"
+        verbose_name = "站点资料"
+        verbose_name_plural = "站点资料"
 
     def __str__(self):
         return self.name_en
@@ -48,6 +68,8 @@ class ResearchArea(TimeStampedModel):
 
     class Meta:
         ordering = ["display_order", "title_en"]
+        verbose_name = "研究方向"
+        verbose_name_plural = "研究方向"
 
     def __str__(self):
         return self.title_en
@@ -79,6 +101,8 @@ class Person(TimeStampedModel):
 
     class Meta:
         ordering = ["display_order", "name_en"]
+        verbose_name = "团队成员"
+        verbose_name_plural = "团队成员"
 
     def __str__(self):
         return self.name_en
@@ -110,9 +134,20 @@ class Publication(TimeStampedModel):
 
     class Meta:
         ordering = ["-year", "display_order", "title"]
+        verbose_name = "论文成果"
+        verbose_name_plural = "论文成果"
 
     def __str__(self):
         return self.title[:100]
+
+    @property
+    def type_label_cn(self):
+        return {
+            "journal": "期刊论文",
+            "book": "书籍与章节",
+            "conference": "会议论文",
+            "workshop": "特邀报告与研讨会",
+        }.get(self.publication_type, self.get_publication_type_display())
 
 
 class Course(TimeStampedModel):
@@ -128,6 +163,8 @@ class Course(TimeStampedModel):
 
     class Meta:
         ordering = ["display_order", "name_en"]
+        verbose_name = "课程"
+        verbose_name_plural = "课程"
 
     def __str__(self):
         return self.name_en
@@ -145,6 +182,8 @@ class NewsItem(TimeStampedModel):
 
     class Meta:
         ordering = ["-is_pinned", "-publish_date", "-created_at"]
+        verbose_name = "新闻动态"
+        verbose_name_plural = "新闻动态"
 
     def __str__(self):
         return self.title_en
@@ -170,6 +209,8 @@ class Position(TimeStampedModel):
 
     class Meta:
         ordering = ["status", "-publish_date", "title_en"]
+        verbose_name = "招生招聘"
+        verbose_name_plural = "招生招聘"
 
     def __str__(self):
         return self.title_en

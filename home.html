@@ -453,8 +453,8 @@
 
     .pub-layout {
       display: grid;
-      grid-template-columns: 300px 1fr;
-      gap: 28px;
+      grid-template-columns: minmax(220px, 270px) minmax(0, 1fr);
+      gap: 24px;
     }
 
     .filter-panel {
@@ -500,14 +500,49 @@
       display: grid;
       gap: 12px;
     }
-
+    
     .publication-search {
       display: grid;
-      grid-template-columns: minmax(220px, 1fr) minmax(180px, 240px) auto;
+      grid-template-columns: repeat(5, minmax(0, 1fr));
       gap: 10px;
       align-items: center;
     }
 
+    .publication-search input[type="search"] {
+      grid-column: 1 / span 2;
+      grid-row: 1;
+    }
+
+    .publication-search select[name="type"] {
+      grid-column: 3;
+      grid-row: 1;
+    }
+
+    .publication-search select[name="year"] {
+      grid-column: 4;
+      grid-row: 1;
+    }
+
+    .publication-search button {
+      grid-column: 5;
+      grid-row: 1;
+    }
+
+    .publication-search input[name="year_from"] {
+      grid-column: 3;
+      grid-row: 2;
+    }
+
+    .publication-search input[name="year_to"] {
+      grid-column: 4;
+      grid-row: 2;
+    }
+
+    .publication-search select[name="per_page"] {
+      grid-column: 5;
+      grid-row: 2;
+    }
+    
     .publication-search input,
     .publication-search select {
       width: 100%;
@@ -525,12 +560,13 @@
       height: 42px;
       border: 0;
       border-radius: 8px;
-      padding: 0 16px;
+      padding: 0 18px;
       color: var(--white);
       background: var(--teal);
       font-weight: 750;
       font-size: 14px;
       cursor: pointer;
+      white-space: nowrap;
     }
 
     .publication-summary {
@@ -630,6 +666,70 @@
       gap: 14px;
     }
 
+    .people-sections {
+      display: grid;
+      gap: 28px;
+    }
+
+    .people-section {
+      display: grid;
+      gap: 14px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: var(--white);
+      padding: 0;
+      overflow: hidden;
+    }
+
+    .people-section-title {
+      margin: 0;
+      color: var(--teal-dark);
+      font-size: 20px;
+      line-height: 1.25;
+      cursor: pointer;
+      list-style: none;
+      padding: 18px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      user-select: none;
+    }
+
+    .people-section-title::-webkit-details-marker {
+      display: none;
+    }
+
+    .people-section-title::after {
+      content: "+";
+      width: 30px;
+      height: 30px;
+      border: 1px solid var(--line);
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      color: var(--teal-dark);
+      background: var(--soft);
+      font-size: 18px;
+      line-height: 1;
+      flex: 0 0 auto;
+    }
+
+    .people-section[open] .people-section-title::after {
+      content: "-";
+    }
+
+    .people-section-count {
+      margin-left: auto;
+      color: var(--muted);
+      font-size: 14px;
+      font-weight: 600;
+    }
+
+    .people-section .people-grid {
+      padding: 0 20px 20px;
+    }
+
     .person-card,
     .news-card {
       border: 1px solid var(--line);
@@ -637,6 +737,16 @@
       background: var(--white);
       padding: 20px;
       min-height: 176px;
+    }
+
+    .person-photo {
+      width: 72px;
+      height: 72px;
+      border-radius: 50%;
+      object-fit: cover;
+      object-position: center top;
+      margin-bottom: 18px;
+      background: var(--soft);
     }
 
     .avatar {
@@ -660,6 +770,29 @@
       font-size: 14px;
     }
 
+    .person-meta {
+      margin-top: 10px;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .person-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 14px;
+    }
+
+    .person-links a {
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      padding: 5px 10px;
+      color: var(--teal-dark);
+      background: var(--soft);
+      font-size: 12px;
+      font-weight: 750;
+    }
+
     .news-image {
       width: 100%;
       height: 116px;
@@ -667,6 +800,79 @@
       border-radius: 6px;
       margin-bottom: 16px;
       background: var(--soft);
+    }
+
+    .join-band {
+      background: var(--white);
+      border-block: 1px solid var(--line);
+    }
+
+    .join-layout {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 72px 24px;
+      display: grid;
+      grid-template-columns: minmax(280px, 420px) minmax(0, 1fr);
+      gap: 44px;
+      align-items: center;
+    }
+
+    .join-media {
+      border-radius: 8px;
+      overflow: hidden;
+      background: var(--soft);
+      box-shadow: var(--shadow);
+    }
+
+    .join-media img {
+      width: 100%;
+      display: block;
+      aspect-ratio: 4 / 3;
+      object-fit: cover;
+    }
+
+    .join-content h2 {
+      margin: 8px 0 14px;
+    }
+
+    .join-content p {
+      margin: 0 0 14px;
+      color: var(--muted);
+      font-size: 16px;
+    }
+
+    .join-options {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 10px;
+      margin: 20px 0 22px;
+    }
+
+    .join-option {
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 13px 14px;
+      color: var(--navy);
+      background: var(--paper);
+      font-weight: 750;
+      font-size: 14px;
+    }
+
+    .join-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      align-items: center;
+    }
+
+    .secondary-link {
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      padding: 10px 16px;
+      color: var(--teal-dark);
+      background: var(--white);
+      font-weight: 750;
+      font-size: 14px;
     }
 
     .contact-line {
@@ -738,12 +944,71 @@
       .pub-layout,
       .publication-search,
       .bio-details,
+      .join-layout,
       .cta-inner {
+        grid-template-columns: 1fr;
+      }
+
+      .join-options {
         grid-template-columns: 1fr;
       }
 
       .filter-panel {
         position: static;
+      }
+
+      .publication-search input[type="search"],
+      .publication-search select[name="type"],
+      .publication-search select[name="year"],
+      .publication-search input[name="year_from"],
+      .publication-search input[name="year_to"],
+      .publication-search select[name="per_page"],
+      .publication-search button {
+        grid-column: auto;
+        grid-row: auto;
+      }
+    }
+
+    @media (max-width: 1240px) and (min-width: 921px) {
+      .publication-search {
+        grid-template-columns: minmax(260px, 1fr) minmax(150px, 190px) minmax(120px, 150px);
+      }
+
+      .publication-search input[type="search"] {
+        grid-column: 1 / -1;
+        grid-row: 1;
+      }
+
+      .publication-search select[name="type"] {
+        grid-column: 1;
+        grid-row: 2;
+      }
+
+      .publication-search select[name="year"] {
+        grid-column: 2;
+        grid-row: 2;
+      }
+
+      .publication-search select[name="per_page"] {
+        grid-column: 3;
+        grid-row: 2;
+      }
+
+      .publication-search input[name="year_from"] {
+        grid-column: 1;
+        grid-row: 3;
+      }
+
+      .publication-search input[name="year_to"] {
+        grid-column: 2;
+        grid-row: 3;
+      }
+
+      .publication-search button {
+        grid-column: 3;
+        grid-row: 3;
+        justify-self: stretch;
+        min-width: 96px;
       }
     }
 
@@ -804,24 +1069,24 @@
 <body>
   <header class="topbar">
     <nav class="nav" aria-label="Main navigation">
-      <a class="brand" href="#">
+      <a class="brand" href="{% url home_url_name %}">
         <img class="brand-logo" src="{% if profile.sustech_logo %}{{ profile.sustech_logo.url }}{% else %}{% static 'legacy/sustech-logo.png' %}{% endif %}" alt="Southern University of Science and Technology">
         <img class="brand-logo department" src="{% if profile.department_logo %}{{ profile.department_logo.url }}{% else %}{% static 'legacy/department-logo.png' %}{% endif %}" alt="Department of Electrical and Electronic Engineering">
         <span class="brand-title">
-          <strong>{{ profile.name_en|default:"em+ Lab" }}</strong>
-          <span>{{ profile.subtitle_en|default:"Southern University of Science and Technology" }}</span>
+          <strong>{{ site.name }}</strong>
+          <span>{{ site.subtitle }}</span>
         </span>
       </a>
       <div class="nav-links">
-        <a href="#research">Research</a>
-        <a href="#people">People</a>
-        <a href="#publications">Publications</a>
-        <a href="#teaching">Teaching</a>
-        <a href="#news">News</a>
+        <a href="#research">{{ labels.research }}</a>
+        <a href="#people">{{ labels.people }}</a>
+        <a href="#publications">{{ labels.publications }}</a>
+        <a href="#teaching">{{ labels.teaching }}</a>
+        <a href="#news">{{ labels.news }}</a>
       </div>
       <div class="nav-actions">
-        <a class="language" href="#">中文</a>
-        <a class="button" href="#positions">Open Positions</a>
+        <a class="language" href="{{ language_url }}">{{ language_label }}</a>
+        <a class="button" href="#join-us">{{ labels.join_us }}</a>
       </div>
     </nav>
   </header>
@@ -830,23 +1095,23 @@
     <div class="hero-inner">
       <div class="hero-copy">
         <img class="hero-lab-logo" src="{% if profile.lab_logo %}{{ profile.lab_logo.url }}{% else %}{% static 'legacy/lab-logo.jpg' %}{% endif %}" alt="Cheng's Lab">
-        <div class="eyebrow">Electromagnetic Modeling · Microwave CAD · Antenna Optimization</div>
-        <h1>{{ profile.hero_title|default:"Cheng's Lab" }}</h1>
+        <div class="eyebrow">{% if is_zh %}电磁建模 · 微波 CAD · 天线优化{% else %}Electromagnetic Modeling · Microwave CAD · Antenna Optimization{% endif %}</div>
+        <h1>{{ site.hero_title|default:"Cheng's Lab" }}</h1>
         <p>
-          {{ profile.hero_text|default:"Research in space mapping, surrogate modeling, simulation-driven optimization, microwave circuits, antennas, and RF engineering." }}
+          {{ site.hero_text|default:"Research in space mapping, surrogate modeling, simulation-driven optimization, microwave circuits, antennas, and RF engineering." }}
         </p>
         <img class="hero-name-cn" src="{% if profile.professor_name_image %}{{ profile.professor_name_image.url }}{% else %}{% static 'legacy/qingsha-name-cn.png' %}{% endif %}" alt="程庆沙">
       </div>
       <div class="hero-meta">
-        <span class="meta-pill">Qingsha S. Cheng</span>
-        <span class="meta-pill">Department of Electrical and Electronic Engineering</span>
-        <span class="meta-pill">Shenzhen, China</span>
+        <span class="meta-pill">{{ site.professor_name }}</span>
+        <span class="meta-pill">{% if is_zh %}电子与电气工程系{% else %}Department of Electrical and Electronic Engineering{% endif %}</span>
+        <span class="meta-pill">{% if is_zh %}中国深圳{% else %}Shenzhen, China{% endif %}</span>
       </div>
       <div class="hero-band" aria-label="Publication statistics">
-        <div class="stat"><strong>{{ publication_counts.journal }}</strong><span>Journal papers</span></div>
-        <div class="stat"><strong>{{ publication_counts.conference }}</strong><span>Conference papers</span></div>
-        <div class="stat"><strong>{{ publication_counts.workshop }}</strong><span>Invited talks</span></div>
-        <div class="stat"><strong>5800+</strong><span>Google Scholar citations</span></div>
+        <div class="stat"><strong>{{ publication_counts.journal }}</strong><span>{{ labels.journal }}</span></div>
+        <div class="stat"><strong>{{ publication_counts.conference }}</strong><span>{{ labels.conference }}</span></div>
+        <div class="stat"><strong>{{ publication_counts.workshop }}</strong><span>{{ labels.workshop }}</span></div>
+        <div class="stat"><strong>5800+</strong><span>{% if is_zh %}Google Scholar 引用{% else %}Google Scholar citations{% endif %}</span></div>
       </div>
     </div>
   </section>
@@ -855,20 +1120,20 @@
     <section class="section" id="research">
       <div class="section-heading">
         <div>
-          <div class="section-kicker">Research</div>
-          <h2>Fast modeling and optimization for electromagnetic systems.</h2>
+          <div class="section-kicker">{{ labels.research }}</div>
+          <h2>{% if is_zh %}面向电磁系统的快速建模与优化。{% else %}Fast modeling and optimization for electromagnetic systems.{% endif %}</h2>
         </div>
         <p>
-          The research interface emphasizes clear categories, representative work,
-          and direct links from each topic to related publications and projects.
+          {% if is_zh %}研究方向围绕电磁建模、微波 CAD、代理模型和天线优化展开，并与相关论文成果对应。{% else %}The research interface emphasizes clear categories, representative work,
+          and direct links from each topic to related publications and projects.{% endif %}
         </p>
       </div>
       <div class="research-grid">
         {% for area in research_areas %}
         <article class="research-card">
-          <b>{{ forloop.counter|stringformat:"02d" }}</b>
-          <h3>{{ area.title_en }}</h3>
-          <p>{{ area.summary_en }}</p>
+          <b>{{ area.number }}</b>
+          <h3>{{ area.title }}</h3>
+          <p>{{ area.summary }}</p>
         </article>
         {% empty %}
         <article class="research-card">
@@ -900,72 +1165,54 @@
         <div class="portrait-panel">
           <img src="{% if profile.professor_photo %}{{ profile.professor_photo.url }}{% else %}{% static 'legacy/qingsha-cheng.jpg' %}{% endif %}" alt="Qingsha S. Cheng">
           <div class="portrait-caption">
-            <strong>Qingsha S. Cheng</strong>
-            <span>Associate Professor, SUSTech</span>
+            <strong>{{ site.professor_name }}</strong>
+            <span>{{ site.professor_title }}</span>
           </div>
         </div>
         <div class="bio-copy">
-          <div class="section-kicker">Biography</div>
-          <h2>Qingsha S. Cheng</h2>
+          <div class="section-kicker">{{ labels.biography }}</div>
+          <h2>{{ site.professor_name }}</h2>
           <p>
-            Qingsha (Shasha) Cheng received the B.Eng. and M.Eng. degrees in
-            automation from Chongqing University, China, and the Ph.D. degree
-            from McMaster University, Canada, in 2004. He is currently an
-            associate professor at Southern University of Science and Technology
-            in Shenzhen, China.
+            {{ site.biography }}
           </p>
           <p>
-            His research focuses on space mapping, surrogate modeling,
-            simulator-based tuning, computer-aided design, and fast modeling and
-            optimization methods for microwave circuits, antennas, and RF systems.
+            {{ site.research_focus }}
           </p>
           <div class="bio-details">
             <div class="bio-detail">
-              <b>Academic Path</b>
+              <b>{{ labels.bio_academic_path }}</b>
               <p>
-                He worked with Peking University in 1998 and joined the Simulation
-                Optimization Systems Research Laboratory at McMaster University in
-                1999, later serving as a postdoctoral fellow, research associate,
-                research engineer, and sessional lecturer.
+                {{ site.bio_academic_path }}
               </p>
             </div>
             <div class="bio-detail">
-              <b>SUSTech Appointment</b>
+              <b>{{ labels.bio_sustech_appointment }}</b>
               <p>
-                He joined SUSTech in 2014 as an assistant professor and later
-                became a tenured associate professor. He was appointed Adjunct
-                Professor with the University of Regina, Canada, in 2018.
+                {{ site.bio_sustech_appointment }}
               </p>
             </div>
             <div class="bio-detail">
-              <b>Professional Service</b>
+              <b>{{ labels.bio_professional_service }}</b>
               <p>
-                He has served as an associate editor of the International Journal
-                of Numerical Modelling: Electronic Networks, Devices and Fields,
-                and has reviewed for major microwave and antenna journals.
+                {{ site.bio_professional_service }}
               </p>
             </div>
             <div class="bio-detail">
-              <b>Conference Activity</b>
+              <b>{{ labels.bio_conference_activity }}</b>
               <p>
-                He has organized or chaired workshops and sessions for SMSMEO,
-                IEEE IMS, IEEE NEMO, IEEE ICCS, IEEE ACES, IEEE ICCEM, and
-                ACES-China, including electromagnetic modeling and optimization
-                activities for IEEE MTT-S Young Professionals.
+                {{ site.bio_conference_activity }}
               </p>
             </div>
           </div>
           <div class="bio-impact">
-            One of the original contributors to the Space Mapping algorithm, with
-            more than 25 years of research experience and more than 5800 Google
-            Scholar citations as of April 2026.
+            {{ site.bio_impact }}
           </div>
           <div class="timeline">
-            <div class="timeline-row">B.Eng. and M.Eng., Chongqing University</div>
-            <div class="timeline-row">Ph.D., McMaster University, 2004</div>
-            <div class="timeline-row">Joined SUSTech in 2014</div>
-            <div class="timeline-row">Adjunct Professor, University of Regina, 2018</div>
-            <div class="timeline-row">Associate Editor, International Journal of Numerical Modelling</div>
+            <div class="timeline-row">{% if is_zh %}重庆大学工学学士、硕士{% else %}B.Eng. and M.Eng., Chongqing University{% endif %}</div>
+            <div class="timeline-row">{% if is_zh %}2004 年获 McMaster University 博士学位{% else %}Ph.D., McMaster University, 2004{% endif %}</div>
+            <div class="timeline-row">{% if is_zh %}2014 年加入南方科技大学{% else %}Joined SUSTech in 2014{% endif %}</div>
+            <div class="timeline-row">{% if is_zh %}2018 年受聘 University of Regina Adjunct Professor{% else %}Adjunct Professor, University of Regina, 2018{% endif %}</div>
+            <div class="timeline-row">{% if is_zh %}International Journal of Numerical Modelling 副主编{% else %}Associate Editor, International Journal of Numerical Modelling{% endif %}</div>
           </div>
         </div>
       </div>
@@ -974,57 +1221,66 @@
     <section class="section publications" id="publications">
       <div class="section-heading">
         <div>
-          <div class="section-kicker">Publications</div>
-          <h2>Classified research output with clean filtering.</h2>
+          <div class="section-kicker">{{ labels.publications }}</div>
+          <h2>{% if is_zh %}分类研究成果{% else %}Classified Research output{% endif %}</h2>
         </div>
-        <p>
-          Publication data can be migrated from the extracted Markdown and JSON
-          files, then managed through the future backend.
-        </p>
       </div>
       <div class="pub-layout">
         <aside class="filter-panel">
-          <b>Categories</b>
-          <a class="filter-chip {% if not selected_publication_type %}active{% endif %}" href="{% url 'home' %}{% if publication_query %}?q={{ publication_query|urlencode }}{% endif %}#publications">
-            <span>All Publications</span><strong>{{ publication_page.paginator.count }}</strong>
+          <b>{% if is_zh %}分类{% else %}Categories{% endif %}</b>
+          <a class="filter-chip {% if not selected_publication_type %}active{% endif %}" href="{% url home_url_name %}{% if publication_query %}?q={{ publication_query|urlencode }}{% endif %}#publications">
+            <span>{{ labels.all_publications }}</span><strong>{{ publication_page.paginator.count }}</strong>
           </a>
-          <a class="filter-chip {% if selected_publication_type == 'journal' %}active{% endif %}" href="{% url 'home' %}?{% if publication_query %}q={{ publication_query|urlencode }}&{% endif %}type=journal#publications">
-            <span>Journal Papers</span><strong>{{ publication_counts.journal }}</strong>
+          <a class="filter-chip {% if selected_publication_type == 'journal' %}active{% endif %}" href="{% url home_url_name %}?{% if publication_query %}q={{ publication_query|urlencode }}&{% endif %}type=journal#publications">
+            <span>{{ labels.journal }}</span><strong>{{ publication_counts.journal }}</strong>
           </a>
-          <a class="filter-chip {% if selected_publication_type == 'book' %}active{% endif %}" href="{% url 'home' %}?{% if publication_query %}q={{ publication_query|urlencode }}&{% endif %}type=book#publications">
-            <span>Books and Chapters</span><strong>{{ publication_counts.book }}</strong>
+          <a class="filter-chip {% if selected_publication_type == 'book' %}active{% endif %}" href="{% url home_url_name %}?{% if publication_query %}q={{ publication_query|urlencode }}&{% endif %}type=book#publications">
+            <span>{{ labels.book }}</span><strong>{{ publication_counts.book }}</strong>
           </a>
-          <a class="filter-chip {% if selected_publication_type == 'conference' %}active{% endif %}" href="{% url 'home' %}?{% if publication_query %}q={{ publication_query|urlencode }}&{% endif %}type=conference#publications">
-            <span>Conference Proceedings</span><strong>{{ publication_counts.conference }}</strong>
+          <a class="filter-chip {% if selected_publication_type == 'conference' %}active{% endif %}" href="{% url home_url_name %}?{% if publication_query %}q={{ publication_query|urlencode }}&{% endif %}type=conference#publications">
+            <span>{{ labels.conference }}</span><strong>{{ publication_counts.conference }}</strong>
           </a>
-          <a class="filter-chip {% if selected_publication_type == 'workshop' %}active{% endif %}" href="{% url 'home' %}?{% if publication_query %}q={{ publication_query|urlencode }}&{% endif %}type=workshop#publications">
-            <span>Invited Seminars</span><strong>{{ publication_counts.workshop }}</strong>
+          <a class="filter-chip {% if selected_publication_type == 'workshop' %}active{% endif %}" href="{% url home_url_name %}?{% if publication_query %}q={{ publication_query|urlencode }}&{% endif %}type=workshop#publications">
+            <span>{{ labels.workshop }}</span><strong>{{ publication_counts.workshop }}</strong>
           </a>
         </aside>
         <div>
           <div class="publication-tools">
-            <form class="publication-search" method="get" action="{% url 'home' %}#publications">
-              <input type="search" name="q" value="{{ publication_query }}" placeholder="Search title, author, venue, DOI">
+            <form class="publication-search" method="get" action="{% url home_url_name %}#publications">
+              <input type="search" name="q" value="{{ publication_query }}" placeholder="{{ labels.search_placeholder }}">
               <select name="type" aria-label="Publication type">
-                <option value="">All categories</option>
+                <option value="">{{ labels.all_categories }}</option>
                 {% for value, label in publication_type_choices %}
                 <option value="{{ value }}" {% if selected_publication_type == value %}selected{% endif %}>{{ label }}</option>
                 {% endfor %}
               </select>
-              <button type="submit">Search</button>
+              <select name="year" aria-label="Year">
+                <option value="">{{ labels.all_years }}</option>
+                {% for pub_year in years %}
+                <option value="{{ pub_year }}" {% if selected_year == pub_year %}selected{% endif %}>{{ pub_year }}</option>
+                {% endfor %}
+              </select>
+              <input type="number" name="year_from" value="{{ year_from }}" placeholder="{{ labels.year_from }}" min="1900" max="2100">
+              <input type="number" name="year_to" value="{{ year_to }}" placeholder="{{ labels.year_to }}" min="1900" max="2100">
+              <select name="per_page" aria-label="Items per page">
+                {% for option in per_page_options %}
+                <option value="{{ option }}" {% if per_page == option %}selected{% endif %}>{{ option }}{{ labels.per_page_suffix }}</option>
+                {% endfor %}
+              </select>
+              <button type="submit">{{ labels.search }}</button>
             </form>
             <div class="publication-summary">
               {% if publication_page.paginator.count %}
-              Showing {{ publication_page.start_index }}-{{ publication_page.end_index }} of {{ publication_page.paginator.count }} publications{% if publication_query %} for "{{ publication_query }}"{% endif %}
+              {% if is_zh %}显示第 {{ publication_page.start_index }}-{{ publication_page.end_index }} 条，共 {{ publication_page.paginator.count }} 条论文{% if publication_query %}，关键词 "{{ publication_query }}"{% endif %}{% else %}Showing {{ publication_page.start_index }}-{{ publication_page.end_index }} of {{ publication_page.paginator.count }} publications{% if publication_query %} for "{{ publication_query }}"{% endif %}{% endif %}
               {% else %}
-              No publications match the current filters.
+              {{ labels.no_publications }}
               {% endif %}
             </div>
           </div>
           <div class="pub-list">
             {% for publication in publication_page %}
             <article class="pub-item">
-              <time>{{ publication.year|default:"" }} · {{ publication.get_publication_type_display }}</time>
+              <time>{{ publication.year|default:"" }} · {% if is_zh %}{{ publication.type_label_cn }}{% else %}{{ publication.get_publication_type_display }}{% endif %}</time>
               <h3>{{ publication.title }}</h3>
               <p>{% if publication.authors %}{{ publication.authors }}{% elif publication.raw_citation %}{{ publication.raw_citation }}{% endif %}</p>
               {% if publication.venue %}<p>{{ publication.venue }}</p>{% endif %}
@@ -1036,18 +1292,18 @@
             </article>
             {% empty %}
             <article class="pub-item">
-              <time>No results</time>
-              <h3>No publications found</h3>
-              <p>Try a different keyword or category.</p>
+              <time>{{ labels.no_results }}</time>
+              <h3>{{ labels.no_publications_found }}</h3>
+              <p>{{ labels.try_different_search }}</p>
             </article>
             {% endfor %}
           </div>
           {% if publication_page.paginator.num_pages > 1 %}
           <nav class="pagination" aria-label="Publication pagination">
-            <span>Page {{ publication_page.number }} of {{ publication_page.paginator.num_pages }}</span>
+            <span>{% if is_zh %}第 {{ publication_page.number }} 页，共 {{ publication_page.paginator.num_pages }} 页{% else %}Page {{ publication_page.number }} of {{ publication_page.paginator.num_pages }}{% endif %}</span>
             <div class="page-links">
               {% if publication_page.has_previous %}
-              <a href="?{% if publication_querystring %}{{ publication_querystring }}&{% endif %}page={{ publication_page.previous_page_number }}#publications">Prev</a>
+              <a href="?{% if publication_querystring %}{{ publication_querystring }}&{% endif %}page={{ publication_page.previous_page_number }}#publications">{{ labels.prev }}</a>
               {% endif %}
               {% for page_number in publication_page.paginator.page_range %}
                 {% if page_number == publication_page.number %}
@@ -1057,7 +1313,7 @@
                 {% endif %}
               {% endfor %}
               {% if publication_page.has_next %}
-              <a href="?{% if publication_querystring %}{{ publication_querystring }}&{% endif %}page={{ publication_page.next_page_number }}#publications">Next</a>
+              <a href="?{% if publication_querystring %}{{ publication_querystring }}&{% endif %}page={{ publication_page.next_page_number }}#publications">{{ labels.next }}</a>
               {% endif %}
             </div>
           </nav>
@@ -1069,79 +1325,143 @@
     <section class="section" id="people">
       <div class="section-heading">
         <div>
-          <div class="section-kicker">People</div>
-          <h2>Grouped profiles for current members and alumni.</h2>
+          <div class="section-kicker">{{ labels.people }}</div>
+          <h2>{% if is_zh %}按身份清晰组织当前成员与毕业生。{% else %}Grouped profiles for current members and alumni.{% endif %}</h2>
         </div>
         <p>
-          The people page can organize researchers by role, degree status, and
-          alumni year while keeping each profile compact and consistent.
+          {% if is_zh %}团队页面可按博士后、博士生、硕士生和毕业生分类展示，并支持后台维护个人信息。{% else %}The people page can organize researchers by role, degree status, and
+          alumni year while keeping each profile compact and consistent.{% endif %}
         </p>
       </div>
+      {% if people_sections %}
+      <div class="people-sections">
+        {% for section in people_sections %}
+        <details class="people-section">
+          <summary class="people-section-title">
+            <span>{{ section.label }}</span>
+            <span class="people-section-count">{{ section.members|length }}</span>
+          </summary>
+          <div class="people-grid">
+            {% for person in section.members %}
+            <article class="person-card">
+              {% if person.photo %}
+              <img class="person-photo" src="{{ person.photo.url }}" alt="{{ person.name }}">
+              {% else %}
+              <div class="avatar"></div>
+              {% endif %}
+              <h3>{{ person.name }}</h3>
+              {% if person.bio %}<p>{{ person.bio }}</p>{% endif %}
+              {% if person.graduation_year or person.current_position %}
+              <div class="person-meta">
+                {% if person.graduation_year %}{{ person.graduation_year }}{% endif %}
+                {% if person.current_position %}{% if person.graduation_year %} · {% endif %}{{ person.current_position }}{% endif %}
+              </div>
+              {% endif %}
+              {% if person.email or person.homepage %}
+              <div class="person-links">
+                {% if person.email %}<a href="mailto:{{ person.email }}">{{ labels.email }}</a>{% endif %}
+                {% if person.homepage %}<a href="{{ person.homepage }}">{{ labels.homepage }}</a>{% endif %}
+              </div>
+              {% endif %}
+            </article>
+            {% endfor %}
+          </div>
+        </details>
+        {% endfor %}
+      </div>
+      {% else %}
       <div class="people-grid">
         <article class="person-card">
           <div class="avatar"></div>
-          <h3>Postdoctoral Fellows</h3>
-          <p>Research staff and postdoctoral members with profile photos and links.</p>
+          <h3>{% if is_zh %}博士后与研究人员{% else %}Postdoctoral Fellows{% endif %}</h3>
+          <p>{% if is_zh %}展示研究人员、博士后成员、照片和个人链接。{% else %}Research staff and postdoctoral members with profile photos and links.{% endif %}</p>
         </article>
         <article class="person-card">
           <div class="avatar"></div>
-          <h3>Ph.D. Students</h3>
-          <p>Current doctoral students, co-supervision notes, and research interests.</p>
+          <h3>{% if is_zh %}博士研究生{% else %}Ph.D. Students{% endif %}</h3>
+          <p>{% if is_zh %}展示在读博士生、联合培养信息和研究方向。{% else %}Current doctoral students, co-supervision notes, and research interests.{% endif %}</p>
         </article>
         <article class="person-card">
           <div class="avatar"></div>
-          <h3>Master Students</h3>
-          <p>Current and graduated master students grouped by status and year.</p>
+          <h3>{% if is_zh %}硕士研究生{% else %}Master Students{% endif %}</h3>
+          <p>{% if is_zh %}按在读和毕业状态整理硕士生信息。{% else %}Current and graduated master students grouped by status and year.{% endif %}</p>
         </article>
+      </div>
+      {% endif %}
+    </section>
+
+    <section class="join-band" id="join-us">
+      <div class="join-layout">
+        <div class="join-media">
+          <img src="{% static 'legacy/join-our-team.jpg' %}" alt="Join our team">
+        </div>
+        <div class="join-content">
+          <div class="section-kicker">{{ labels.join_us }}</div>
+          {% for position in open_positions %}
+          <h2>{{ position.title }}</h2>
+          <p>{{ position.description|default:"The em+ Lab welcomes applications and inquiries from prospective master's students, Ph.D. students, postdoctoral fellows, and engineers interested in electromagnetic modeling, microwave CAD, antenna optimization, surrogate modeling, and simulation-driven design." }}</p>
+          {% empty %}
+          <h2>{% if is_zh %}招生招聘{% else %}Available Positions{% endif %}</h2>
+          <p>
+            {% if is_zh %}课题组长期欢迎对电磁建模、微波 CAD、天线优化、代理模型和仿真驱动设计感兴趣的硕士生、博士生、博士后和工程师联系。{% else %}The em+ Lab welcomes applications and inquiries from prospective
+            master's students, Ph.D. students, postdoctoral fellows, and
+            engineers interested in electromagnetic modeling, microwave CAD,
+            antenna optimization, surrogate modeling, and simulation-driven
+            design.{% endif %}
+          </p>
+          {% endfor %}
+          <div class="join-options" aria-label="Open position categories">
+            <div class="join-option">{% if is_zh %}硕士研究生{% else %}Master Students{% endif %}</div>
+            <div class="join-option">{% if is_zh %}博士研究生{% else %}Ph.D. Students{% endif %}</div>
+            <div class="join-option">{% if is_zh %}博士后{% else %}Postdoctoral Fellows{% endif %}</div>
+            <div class="join-option">{% if is_zh %}工程师{% else %}Engineers{% endif %}</div>
+          </div>
+          <div class="join-actions">
+            <a class="button" href="mailto:{{ profile.email|default:'chengqs@sustech.edu.cn' }}">{{ labels.contact_email }}</a>
+            {% for position in open_positions %}
+              {% if position.attachment %}<a class="secondary-link" href="{{ position.attachment.url }}">{{ labels.download_details }}</a>{% endif %}
+            {% empty %}
+            <a class="secondary-link" href="#people">{{ labels.view_team }}</a>
+            {% endfor %}
+          </div>
+        </div>
       </div>
     </section>
 
-    <section class="section" id="news">
+    <section class="section" id="teaching">
+      <span id="news"></span>
       <div class="section-heading">
         <div>
-          <div class="section-kicker">News & Teaching</div>
-          <h2>Short updates, courses, and open positions.</h2>
+          <div class="section-kicker">{{ labels.news }} & {{ labels.teaching }}</div>
+          <h2>{% if is_zh %}课程与课题组动态。{% else %}Short updates and courses.{% endif %}</h2>
         </div>
         <p>
-          News and teaching content should use the same calm visual language as
-          publications: compact, dated, and easy to scan.
+          {% if is_zh %}课程、新闻和通知采用紧凑清晰的展示方式，便于持续更新。{% else %}News and teaching content should use the same calm visual language as
+          publications: compact, dated, and easy to scan.{% endif %}
         </p>
       </div>
       <div class="news-grid">
         {% for course in courses %}
         <article class="news-card">
-          <h3>{{ course.name_en }}</h3>
-          <p>{{ course.description_en|default:course.years }}</p>
+          <h3>{{ course.name }}</h3>
+          <p>{{ course.description }}</p>
         </article>
         {% empty %}
         <article class="news-card">
-          <h3>Signals and Systems</h3>
-          <p>Course page entry with links to syllabus, notes, and resources.</p>
+          <h3>{% if is_zh %}信号与系统{% else %}Signals and Systems{% endif %}</h3>
+          <p>{% if is_zh %}课程页面可链接教学大纲、讲义和课程资料。{% else %}Course page entry with links to syllabus, notes, and resources.{% endif %}</p>
         </article>
         {% endfor %}
         {% for item in news_items %}
         <article class="news-card">
           {% if item.cover_image %}<img class="news-image" src="{{ item.cover_image.url }}" alt="">{% endif %}
-          <h3>{{ item.title_en }}</h3>
-          <p>{{ item.body_en|truncatewords:18 }}</p>
+          <h3>{{ item.title }}</h3>
+          <p>{{ item.body|truncatewords:18 }}</p>
         </article>
         {% empty %}
         <article class="news-card">
-          <h3>Recent Publications</h3>
-          <p>Latest journal and conference updates for the front page.</p>
-        </article>
-        {% endfor %}
-        {% for position in open_positions %}
-        <article class="news-card" id="positions">
-          {% if position.attachment %}<img class="news-image" src="{{ position.attachment.url }}" alt="">{% else %}<img class="news-image" src="{% static 'legacy/join-our-team.jpg' %}" alt="Join our team">{% endif %}
-          <h3>{{ position.title_en }}</h3>
-          <p>{{ position.description_en|default:"Recruitment information for graduate students, postdocs, and engineers." }}</p>
-        </article>
-        {% empty %}
-        <article class="news-card" id="positions">
-          <img class="news-image" src="{% static 'legacy/join-our-team.jpg' %}" alt="Join our team">
-          <h3>Open Positions</h3>
-          <p>Recruitment information for graduate students, postdocs, and engineers.</p>
+          <h3>{% if is_zh %}最新成果{% else %}Recent Publications{% endif %}</h3>
+          <p>{% if is_zh %}首页可展示最新论文、会议报告和课题组动态。{% else %}Latest journal and conference updates for the front page.{% endif %}</p>
         </article>
         {% endfor %}
       </div>
@@ -1150,17 +1470,17 @@
     <section class="cta-band">
       <div class="cta-inner">
         <div>
-          <h2>Building a maintainable academic website around structured content.</h2>
-          <p>Future backend editing can plug into the same sections without changing the public visual language.</p>
+          <h2>{% if is_zh %}围绕结构化内容建设可持续维护的学术网站。{% else %}Building a maintainable academic website around structured content.{% endif %}</h2>
+          <p>{% if is_zh %}后台内容更新可直接进入同一套前台模块，保持页面风格统一。{% else %}Future backend editing can plug into the same sections without changing the public visual language.{% endif %}</p>
         </div>
-        <a class="button" href="mailto:chengqs@sustech.edu.cn">Contact</a>
+        <a class="button" href="mailto:{{ profile.email|default:'chengqs@sustech.edu.cn' }}">{{ labels.contact_email }}</a>
       </div>
     </section>
   </main>
 
   <footer>
     <div class="footer-inner">
-      <span>{{ profile.name_en|default:"em+ Lab" }} · Southern University of Science and Technology</span>
+      <span>{{ site.name }} · {{ site.subtitle }}</span>
       <span class="contact-line"><img src="{% if profile.orcid_icon %}{{ profile.orcid_icon.url }}{% else %}{% static 'legacy/orcid-16x16.gif' %}{% endif %}" alt=""> {{ profile.email|default:"chengqs@sustech.edu.cn" }} · ORCID · Google Scholar</span>
     </div>
   </footer>
