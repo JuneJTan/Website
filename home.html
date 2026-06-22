@@ -1069,21 +1069,20 @@
 <body>
   <header class="topbar">
     <nav class="nav" aria-label="Main navigation">
-      <a class="brand" href="{% url home_url_name %}">
-
-        <a href="https://www.sustech.edu.cn/" target="_blank" rel="noopener">
+      <div class="brand">
+        <a href="https://www.sustech.edu.cn/" target="_blank" rel="noopener" aria-label="Southern University of Science and Technology">
           <img class="brand-logo" src="{% if profile.sustech_logo %}{{ profile.sustech_logo.url }}{% else %}{% static 'legacy/sustech-logo.png' %}{% endif %}" alt="Southern University of Science and Technology">
         </a>
 
-        <a href="https://eee.sustech.edu.cn/" target="_blank" rel="noopener">
+        <a href="https://eee.sustech.edu.cn/" target="_blank" rel="noopener" aria-label="Department of Electrical and Electronic Engineering">
           <img class="brand-logo department" src="{% if profile.department_logo %}{{ profile.department_logo.url }}{% else %}{% static 'legacy/department-logo.png' %}{% endif %}" alt="Department of Electrical and Electronic Engineering">
         </a>
 
-        <span class="brand-title">
+        <a class="brand-title" href="{% url home_url_name %}">
           <strong>{{ site.name }}</strong>
           <span>{{ site.subtitle }}</span>
-        </span>
-      </a>
+        </a>
+      </div>
       <div class="nav-links">
         <a href="#research">{{ labels.research }}</a>
         <a href="#people">{{ labels.people }}</a>
