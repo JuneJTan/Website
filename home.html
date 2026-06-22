@@ -1070,8 +1070,15 @@
   <header class="topbar">
     <nav class="nav" aria-label="Main navigation">
       <a class="brand" href="{% url home_url_name %}">
-        <img class="brand-logo" src="{% if profile.sustech_logo %}{{ profile.sustech_logo.url }}{% else %}{% static 'legacy/sustech-logo.png' %}{% endif %}" alt="Southern University of Science and Technology">
-        <img class="brand-logo department" src="{% if profile.department_logo %}{{ profile.department_logo.url }}{% else %}{% static 'legacy/department-logo.png' %}{% endif %}" alt="Department of Electrical and Electronic Engineering">
+
+        <a href="https://www.sustech.edu.cn/" target="_blank" rel="noopener">
+          <img class="brand-logo" src="{% if profile.sustech_logo %}{{ profile.sustech_logo.url }}{% else %}{% static 'legacy/sustech-logo.png' %}{% endif %}" alt="Southern University of Science and Technology">
+        </a>
+
+        <a href="https://eee.sustech.edu.cn/" target="_blank" rel="noopener">
+          <img class="brand-logo department" src="{% if profile.department_logo %}{{ profile.department_logo.url }}{% else %}{% static 'legacy/department-logo.png' %}{% endif %}" alt="Department of Electrical and Electronic Engineering">
+        </a>
+
         <span class="brand-title">
           <strong>{{ site.name }}</strong>
           <span>{{ site.subtitle }}</span>
@@ -1111,7 +1118,9 @@
         <div class="stat"><strong>{{ publication_counts.journal }}</strong><span>{{ labels.journal }}</span></div>
         <div class="stat"><strong>{{ publication_counts.conference }}</strong><span>{{ labels.conference }}</span></div>
         <div class="stat"><strong>{{ publication_counts.workshop }}</strong><span>{{ labels.workshop }}</span></div>
-        <div class="stat"><strong>5800+</strong><span>{% if is_zh %}Google Scholar 引用{% else %}Google Scholar citations{% endif %}</span></div>
+        <div class="stat"><strong>5800+</strong><span>{% if is_zh %}<a href="https://scholar.google.com/citations?user=PS7OMA0AAAAJ" target="_blank" rel="noopener">
+            Google Scholar</a> 引用{% else %}Google Scholar citations{% endif %}</span>
+        </div>
       </div>
     </div>
   </section>
@@ -1433,12 +1442,8 @@
       <div class="section-heading">
         <div>
           <div class="section-kicker">{{ labels.news }} & {{ labels.teaching }}</div>
-          <h2>{% if is_zh %}课程与课题组动态。{% else %}Short updates and courses.{% endif %}</h2>
+          <h2>{% if is_zh %}课程与课题组动态{% else %}Short updates and courses{% endif %}</h2>
         </div>
-        <p>
-          {% if is_zh %}课程、新闻和通知采用紧凑清晰的展示方式，便于持续更新。{% else %}News and teaching content should use the same calm visual language as
-          publications: compact, dated, and easy to scan.{% endif %}
-        </p>
       </div>
       <div class="news-grid">
         {% for course in courses %}
@@ -1449,7 +1454,6 @@
         {% empty %}
         <article class="news-card">
           <h3>{% if is_zh %}信号与系统{% else %}Signals and Systems{% endif %}</h3>
-          <p>{% if is_zh %}课程页面可链接教学大纲、讲义和课程资料。{% else %}Course page entry with links to syllabus, notes, and resources.{% endif %}</p>
         </article>
         {% endfor %}
         {% for item in news_items %}
@@ -1461,7 +1465,6 @@
         {% empty %}
         <article class="news-card">
           <h3>{% if is_zh %}最新成果{% else %}Recent Publications{% endif %}</h3>
-          <p>{% if is_zh %}首页可展示最新论文、会议报告和课题组动态。{% else %}Latest journal and conference updates for the front page.{% endif %}</p>
         </article>
         {% endfor %}
       </div>
@@ -1471,7 +1474,6 @@
       <div class="cta-inner">
         <div>
           <h2>{% if is_zh %}围绕结构化内容建设可持续维护的学术网站。{% else %}Building a maintainable academic website around structured content.{% endif %}</h2>
-          <p>{% if is_zh %}后台内容更新可直接进入同一套前台模块，保持页面风格统一。{% else %}Future backend editing can plug into the same sections without changing the public visual language.{% endif %}</p>
         </div>
         <a class="button" href="mailto:{{ profile.email|default:'chengqs@sustech.edu.cn' }}">{{ labels.contact_email }}</a>
       </div>
@@ -1481,7 +1483,20 @@
   <footer>
     <div class="footer-inner">
       <span>{{ site.name }} · {{ site.subtitle }}</span>
-      <span class="contact-line"><img src="{% if profile.orcid_icon %}{{ profile.orcid_icon.url }}{% else %}{% static 'legacy/orcid-16x16.gif' %}{% endif %}" alt=""> {{ profile.email|default:"chengqs@sustech.edu.cn" }} · ORCID · Google Scholar</span>
+        <span class="contact-line">
+        <img src="{% if profile.orcid_icon %}{{ profile.orcid_icon.url }}{% else %}{% static 'legacy/orcid-16x16.gif' %}{% endif %}" alt="">
+        <a href="mailto:{{ profile.email|default:'chengqs@sustech.edu.cn' }}">
+          {{ profile.email|default:"chengqs@sustech.edu.cn" }}
+        </a>
+        ·
+        <a href="{{ profile.orcid_url|default:'https://orcid.org/0000-0003-3869-3378' }}" target="_blank" rel="noopener">
+          ORCID
+        </a>
+        ·
+        <a href="{{ profile.google_scholar_url|default:'https://scholar.google.com/citations?user=PS7OMA0AAAAJ&hl=en' }}" target="_blank" rel="noopener">
+          Google Scholar
+        </a>
+      </span>
     </div>
   </footer>
 </body>
