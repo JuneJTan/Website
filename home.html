@@ -1091,6 +1091,7 @@
         <a href="#news">{{ labels.news }}</a>
       </div>
       <div class="nav-actions">
+        <a class="language" href="/wwwroot/index.htm">{% if is_zh %}旧版{% else %}Legacy{% endif %}</a>
         <a class="language" href="{{ language_url }}">{{ language_label }}</a>
         <a class="button" href="#join-us">{{ labels.join_us }}</a>
       </div>
@@ -1129,12 +1130,8 @@
       <div class="section-heading">
         <div>
           <div class="section-kicker">{{ labels.research }}</div>
-          <h2>{% if is_zh %}面向电磁系统的快速建模与优化。{% else %}Fast modeling and optimization for electromagnetic systems.{% endif %}</h2>
+          <h2>{% if is_zh %}面向电磁系统的快速建模与优化{% else %}Fast modeling and optimization for electromagnetic systems{% endif %}</h2>
         </div>
-        <p>
-          {% if is_zh %}研究方向围绕电磁建模、微波 CAD、代理模型和天线优化展开，并与相关论文成果对应。{% else %}The research interface emphasizes clear categories, representative work,
-          and direct links from each topic to related publications and projects.{% endif %}
-        </p>
       </div>
       <div class="research-grid">
         {% for area in research_areas %}
@@ -1332,14 +1329,6 @@
 
     <section class="section" id="people">
       <div class="section-heading">
-        <div>
-          <div class="section-kicker">{{ labels.people }}</div>
-          <h2>{% if is_zh %}按身份清晰组织当前成员与毕业生。{% else %}Grouped profiles for current members and alumni.{% endif %}</h2>
-        </div>
-        <p>
-          {% if is_zh %}团队页面可按博士后、博士生、硕士生和毕业生分类展示，并支持后台维护个人信息。{% else %}The people page can organize researchers by role, degree status, and
-          alumni year while keeping each profile compact and consistent.{% endif %}
-        </p>
       </div>
       {% if people_sections %}
       <div class="people-sections">
@@ -1472,7 +1461,7 @@
     <section class="cta-band">
       <div class="cta-inner">
         <div>
-          <h2>{% if is_zh %}围绕结构化内容建设可持续维护的学术网站。{% else %}Building a maintainable academic website around structured content.{% endif %}</h2>
+          <h2>{% if is_zh %}欢迎就科研合作、学生培养和学术交流与我们联系。{% else %}We welcome inquiries about research collaboration, student supervision, and academic exchange.{% endif %}</h2>
         </div>
         <a class="button" href="mailto:{{ profile.email|default:'chengqs@sustech.edu.cn' }}">{{ labels.contact_email }}</a>
       </div>
