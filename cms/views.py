@@ -56,6 +56,11 @@ def home(request, lang="en"):
     publication_params.pop("page", None)
     publication_querystring = publication_params.urlencode()
     publication_page = Paginator(publications, per_page).get_page(request.GET.get("page"))
+    publication_elided_page_range = publication_page.paginator.get_elided_page_range(
+        number=publication_page.number,
+        on_each_side=1,
+        on_ends=2,
+    )
 
     publication_counts = dict(
         Publication.objects.filter(is_visible=True)
@@ -222,6 +227,7 @@ def home(request, lang="en"):
         "news_items": news_items,
         "open_positions": open_positions,
         "publication_page": publication_page,
+        "publication_elided_page_range": publication_elided_page_range,
         "publication_query": publication_query,
         "selected_publication_type": publication_type,
         "publication_querystring": publication_querystring,
