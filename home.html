@@ -588,16 +588,23 @@
       gap: 8px;
     }
 
-    .pub-item time {
+    .pub-meta {
       color: var(--teal);
       font-weight: 800;
       font-size: 13px;
     }
 
-    .pub-item h3 {
+    .pub-year {
+      color: var(--teal-dark);
+      font-weight: 850;
+      white-space: nowrap;
+    }
+
+    .pub-citation {
       margin: 0;
-      font-size: 18px;
-      line-height: 1.32;
+      color: #3d4c5d;
+      font-size: 15px;
+      line-height: 1.58;
     }
 
     .pub-item p {
@@ -1322,20 +1329,20 @@
           <div class="pub-list">
             {% for publication in publication_page %}
             <article class="pub-item">
-              <time>{{ publication.year|default:"" }} · {% if is_zh %}{{ publication.type_label_cn }}{% else %}{{ publication.get_publication_type_display }}{% endif %}</time>
-              <h3>{{ publication.title }}</h3>
-              <p>{% if publication.authors %}{{ publication.authors }}{% elif publication.raw_citation %}{{ publication.raw_citation }}{% endif %}</p>
-              {% if publication.venue %}<p>{{ publication.venue }}</p>{% endif %}
+              <div class="pub-meta">{% if is_zh %}{{ publication.type_label_cn }}{% else %}{{ publication.get_publication_type_display }}{% endif %}</div>
+              <p class="pub-citation"><span class="pub-year">[{{ publication.year|default:"" }}]</span> {{ publication.citation_text }}</p>
+              {% if publication.external_url or publication.pdf_file or publication.doi %}
               <div class="pub-actions">
                 {% if publication.external_url %}<a href="{{ publication.external_url }}">Link</a>{% endif %}
                 {% if publication.pdf_file %}<a href="{{ publication.pdf_file.url }}">PDF</a>{% endif %}
                 {% if publication.doi %}<a href="https://doi.org/{{ publication.doi }}">DOI</a>{% endif %}
               </div>
+              {% endif %}
             </article>
             {% empty %}
             <article class="pub-item">
-              <time>{{ labels.no_results }}</time>
-              <h3>{{ labels.no_publications_found }}</h3>
+              <div class="pub-meta">{{ labels.no_results }}</div>
+              <p class="pub-citation">{{ labels.no_publications_found }}</p>
               <p>{{ labels.try_different_search }}</p>
             </article>
             {% endfor %}

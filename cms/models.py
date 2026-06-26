@@ -149,6 +149,24 @@ class Publication(TimeStampedModel):
             "workshop": "特邀报告与研讨会",
         }.get(self.publication_type, self.get_publication_type_display())
 
+    @property
+    def citation_text(self):
+        if self.raw_citation:
+            return self.raw_citation
+
+        parts = []
+        if self.authors:
+            parts.append(self.authors.rstrip("."))
+        if self.title:
+            parts.append(f'"{self.title.rstrip(".")},"')
+        if self.venue:
+            parts.append(self.venue.rstrip("."))
+
+        citation = " ".join(parts).strip()
+        if citation and citation[-1] not in ".!?":
+            citation += "."
+        return citation or self.title
+
 
 class Course(TimeStampedModel):
     name_en = models.CharField(max_length=180)
